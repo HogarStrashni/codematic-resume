@@ -1,6 +1,7 @@
 <script lang="ts">
-	type Props = { class?: string };
-	let { class: className }: Props = $props();
+	import type { IconProps } from '$lib/icons';
+
+	let { class: className }: IconProps = $props();
 </script>
 
 <svg
