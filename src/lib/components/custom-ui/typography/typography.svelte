@@ -1,6 +1,8 @@
 <script lang="ts">
-	import { cn } from '$lib/utils/tailwind';
 	import type { Snippet } from 'svelte';
+
+	import { cn } from '$lib/utils/tailwind';
+	import type { ClassValue } from 'clsx';
 	import { textVariants, type TextVariantProps } from './text-variants';
 
 	type HTMLTextElement = 'h2' | 'h3' | 'p' | 'span';
@@ -10,7 +12,7 @@
 		tag: HTMLTextElement;
 		variant: TextVariantProps['variant'];
 		fontWeight: TextVariantProps['fontWeight'];
-		class: string;
+		class: ClassValue;
 	}>;
 
 	let {
