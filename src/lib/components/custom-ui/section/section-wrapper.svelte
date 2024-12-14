@@ -13,7 +13,7 @@
 </script>
 
 <section class={cn('mt-12 space-y-4', className)}>
-	<Typography tag="h3" variant="headingSmall" fontWeight="bold">
+	<Typography tag="h2" variant="headingSmall" fontWeight="bold">
 		{title}
 	</Typography>
 

@@ -1,7 +1,9 @@
 <script lang="ts">
 	import Header from '$lib/components/custom-ui/header';
 	import SectionWrapper from '$lib/components/custom-ui/section';
+
 	import Summary from '$lib/components/custom-ui/section/summary';
+	import Experience from '$lib/components/custom-ui/section/experience';
 </script>
 
 <Header />
@@ -11,7 +13,7 @@
 </SectionWrapper>
 
 <SectionWrapper title="Work Experience">
-	<div>Experience placeholder</div>
+	<Experience class="space-y-4" />
 </SectionWrapper>
 
 <SectionWrapper title="Education">
