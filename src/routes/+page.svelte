@@ -6,26 +6,26 @@
 
 <Header />
 
-<SectionWrapper title="Summary" class="mt-12 space-y-4">
+<SectionWrapper title="Summary">
 	<Summary class="space-y-2" />
 </SectionWrapper>
 
-<SectionWrapper title="Work Experience" class="mt-12 space-y-4">
+<SectionWrapper title="Work Experience">
 	<div>Experience placeholder</div>
 </SectionWrapper>
 
-<SectionWrapper title="Education" class="mt-12 space-y-4">
+<SectionWrapper title="Education">
 	<div>Education placeholder</div>
 </SectionWrapper>
 
-<SectionWrapper title="Skills" class="mt-12 space-y-4">
+<SectionWrapper title="Skills">
 	<div>Skills placeholder</div>
 </SectionWrapper>
 
-<SectionWrapper title="Projects" class="mt-12 space-y-4">
+<SectionWrapper title="Projects">
 	<div>Projects placeholder</div>
 </SectionWrapper>
 
-<SectionWrapper title="Hobby and personal qualities" class="mt-12 space-y-4">
+<SectionWrapper title="Hobby and personal qualities">
 	<div>Hobby and personal qualities placeholder</div>
 </SectionWrapper>
