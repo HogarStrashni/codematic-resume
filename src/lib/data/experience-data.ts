@@ -1,9 +1,14 @@
+import SitecLogo from '$lib/assets/sitec-llc-logo.jpg';
+import ElevateBitsLogo from '$lib/assets/elevatebits-logo.jpg';
+import GeoputLogo from '$lib/assets/geoput-logo.png';
+import RoutingLogo from '$lib/assets/routing-logo.png';
+
 export const experienceData = [
 	{
 		title: 'Software developer',
 		company: 'Sitec LLC',
 		location: 'Banja Luka',
-		logo: '',
+		logo: SitecLogo,
 		dateStart: '2023-03-16',
 		dateEnd: null,
 		description:
@@ -24,7 +29,7 @@ export const experienceData = [
 		title: 'Junior React Developer',
 		company: 'ElevateBits',
 		location: 'Banja Luka',
-		logo: '',
+		logo: ElevateBitsLogo,
 		dateStart: '2022-12-01',
 		dateEnd: '2023-03-16',
 		description:
@@ -47,7 +52,7 @@ export const experienceData = [
 		title: 'Web Development Intern',
 		company: 'Sitec LLC',
 		location: 'Banja Luka',
-		logo: '',
+		logo: SitecLogo,
 		dateStart: '2022-02-01',
 		dateEnd: '2022-12-16',
 		description:
@@ -69,7 +74,7 @@ export const experienceData = [
 		title: 'Civil Engineer',
 		company: 'Geoput d.o.o.',
 		location: 'Banja Luka',
-		logo: '',
+		logo: GeoputLogo,
 		dateStart: '2022-01-31',
 		dateEnd: '2019-01-15',
 		description:
@@ -86,7 +91,7 @@ export const experienceData = [
 		title: 'Civil Engineer',
 		company: 'Routing d.o.o.',
 		location: 'Banja Luka',
-		logo: '',
+		logo: RoutingLogo,
 		dateStart: '2012-03-20',
 		dateEnd: '2018-09-30',
 		description:
