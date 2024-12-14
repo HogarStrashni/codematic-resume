@@ -12,7 +12,7 @@
 	let { children, title, class: className }: SectionWrapperProps = $props();
 </script>
 
-<section class={cn('mt-12 space-y-4', className)}>
+<section class={cn('mt-12 space-y-6', className)}>
 	<Typography tag="h2" variant="headingSmall" fontWeight="bold">
 		{title}
 	</Typography>

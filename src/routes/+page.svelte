@@ -5,20 +5,21 @@
 	import Summary from '$lib/components/custom-ui/section/summary';
 	import Experience from '$lib/components/custom-ui/section/experience';
 	import ListTags from '$lib/components/custom-ui/list-tags/list-tags.svelte';
+	import Education from '$lib/components/custom-ui/section/education/education.svelte';
 </script>
 
 <Header />
 
 <SectionWrapper title="Summary">
-	<Summary class="space-y-2" />
+	<Summary />
 </SectionWrapper>
 
 <SectionWrapper title="Work Experience">
-	<Experience class="space-y-4" />
+	<Experience />
 </SectionWrapper>
 
 <SectionWrapper title="Education">
-	<div>Education placeholder</div>
+	<Education />
 </SectionWrapper>
 
 <SectionWrapper title="Skills">
