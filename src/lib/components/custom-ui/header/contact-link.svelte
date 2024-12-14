@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { SvelteHTMLElements } from 'svelte/elements';
+
+	import type { ContactInfo } from '$lib/data/contact-data';
 	import Typography from '$lib/components/custom-ui/typography';
-	import type { ContactInfo } from '$lib/components/custom-ui/header';
 
 	type ContactLinkProps = ContactInfo & { class?: SvelteHTMLElements['a']['class'] };
 

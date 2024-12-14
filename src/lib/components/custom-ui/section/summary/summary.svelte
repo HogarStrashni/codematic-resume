@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { SvelteHTMLElements } from 'svelte/elements';
 
-	import { summaryData } from './summary-data';
+	import { summaryData } from '$lib/data/summary-data';
 	import Typography from '$lib/components/custom-ui/typography';
 
 	type SummaryProps = { class?: SvelteHTMLElements['div']['class'] };
