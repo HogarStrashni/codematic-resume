@@ -1,10 +1,12 @@
 <script lang="ts">
 	import Typography from '$lib/components/custom-ui/typography';
+	import Header from '$lib/components/custom-ui/header';
 </script>
 
-<section class="mt-12 opacity-10">
+<Header />
+<section class="mt-12">
 	<Typography tag="h3" variant="headingSmall" fontWeight="bold">Summary</Typography>
-	<Typography variant="text">
+	<Typography>
 		With a decade of experience as a civil engineer, I made the exciting transition to software
 		development, discovering a true passion for coding along the way. As a software developer, I
 		leverage my engineering background to devise effective solutions and enhance user experiences
