@@ -10,10 +10,13 @@
 </script>
 
 <header class={className}>
-	<Typography tag="h2" variant="heading" fontWeight="bold">Đorđe Matić</Typography>
+	<Typography tag="h1" variant="heading" fontWeight="bold">
+		Đorđe Matić
+		<span class="sr-only">resume</span>
+	</Typography>
 
 	<Typography class="mt-2">Software Developer | Frontend Focused</Typography>
-	<Typography>Banja Luka, Serb Republic, Bosnia and Herzegovina</Typography>
+	<Typography>Banja Luka, Bosnia and Herzegovina</Typography>
 
 	<div class="mt-4 grid gap-2 md:grid-cols-2">
 		{#each contactInfo as data (data.id)}

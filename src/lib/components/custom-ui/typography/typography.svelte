@@ -5,7 +5,7 @@
 	import type { ClassValue } from 'clsx';
 	import { textVariants, type TextVariantProps } from './text-variants';
 
-	type HTMLTextElement = 'h2' | 'h3' | 'p' | 'span';
+	type HTMLTextElement = 'h1' | 'h2' | 'h3' | 'p' | 'span';
 
 	type TypographyProps = Partial<{
 		children: Snippet;
