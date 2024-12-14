@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { SvelteHTMLElements } from 'svelte/elements';
 
-	import { contactInfo } from '$lib/data/contact-data';
+	import { contactInfo } from '$lib/data/contact';
 	import Typography from '$lib/components/custom-ui/typography';
 	import { ContactLink } from '$lib/components/custom-ui/header';
 

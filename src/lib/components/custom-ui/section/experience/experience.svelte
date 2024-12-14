@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { SvelteHTMLElements } from 'svelte/elements';
 
-	import { experienceData } from '$lib/data/experience-data';
+	import { experienceData } from '$lib/data/experience';
 	import { ExperienceArticle } from '$lib/components/custom-ui/section/experience';
 
 	type ExperienceProps = { class?: SvelteHTMLElements['div']['class'] };

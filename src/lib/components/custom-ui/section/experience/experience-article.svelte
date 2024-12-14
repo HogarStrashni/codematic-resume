@@ -5,7 +5,7 @@
 	import Typography from '$lib/components/custom-ui/typography';
 	import { DateRangeDisplay } from '$lib/components/custom-ui/section/experience';
 	import ListTags from '$lib/components/custom-ui/list-tags';
-	import type { ExperienceData } from '$lib/data/experience-data';
+	import type { ExperienceData } from '$lib/data/experience';
 
 	type ExperienceArticleProps = {
 		articleData: ExperienceData;
