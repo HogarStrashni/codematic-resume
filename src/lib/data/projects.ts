@@ -36,3 +36,5 @@ export const projectsData = [
 		github: 'https://github.com/hogarstrashni/students-app-react'
 	}
 ];
+
+export type ProjectData = (typeof projectsData)[number];
