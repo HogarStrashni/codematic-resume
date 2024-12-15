@@ -24,7 +24,7 @@
 		<Typography>Banja Luka, Bosnia and Herzegovina</Typography>
 	</div>
 
-	<div class="mt-4 grid gap-2 md:grid-cols-2">
+	<div class="mt-4 grid gap-2 sm:grid-cols-2">
 		{#each contactInfo as data (data.id)}
 			<ContactLink {...data} class="flex max-w-fit items-center gap-2" />
 		{/each}
