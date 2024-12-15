@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Codematic Resume</title>
+	<title>Đorđe Matić - Resume</title>
 	<meta name="description" content="Codematic Đorđe Matić Resume - Personal Website" />
 </svelte:head>
 
