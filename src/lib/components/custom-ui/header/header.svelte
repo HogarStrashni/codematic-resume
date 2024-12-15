@@ -6,20 +6,14 @@
 	import Typography from '$lib/components/custom-ui/typography';
 	import { ContactLink } from '$lib/components/custom-ui/header';
 	import Image from '$lib/components/custom-ui/image';
-	import avatarImage from '$lib/assets/avatar-image.png';
+	import avatarImage from '$lib/assets/avatar-image.png?enhanced';
 
 	type HeaderProps = { class?: SvelteHTMLElements['header']['class'] };
 	let { class: className }: HeaderProps = $props();
 </script>
 
 <header class={cn('space-y-2', className)}>
-	<Image
-		src={avatarImage}
-		alt="Đorđe Matić avatar"
-		width={96}
-		height={96}
-		class="size-24 rounded-full"
-	/>
+	<Image src={avatarImage} alt="Đorđe Matić avatar" class="size-24 rounded-full" />
 
 	<Typography tag="h1" variant="heading" fontWeight="bold">
 		Đorđe Matić

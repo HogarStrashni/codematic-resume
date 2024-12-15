@@ -2,11 +2,21 @@
 	import type { SvelteHTMLElements } from 'svelte/elements';
 	import { cn } from '$lib/utils/tailwind';
 
-	type ImageProps = SvelteHTMLElements['img'];
+	// created by @sveltejs/enhanced-img plugin
+	type Picture = {
+		img: { src: string; w: number; h: number };
+		sources: Record<string, string>;
+	};
 
-	let { src, alt = '', width = 32, height = 32, class: className }: ImageProps = $props();
+	type ImageProps = {
+		src: Picture;
+		alt?: string;
+		class?: SvelteHTMLElements['img']['class'];
+	};
+
+	let { src, alt = '', class: className }: ImageProps = $props();
 </script>
 
 <div class={cn('size-8 shrink-0 overflow-hidden rounded border', className)}>
-	<img {src} {alt} {width} {height} />
+	<enhanced:img {src} {alt} />
 </div>

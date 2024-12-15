@@ -1,7 +1,7 @@
 <script lang="ts">
-	import agfblLogo from '$lib/assets/agfbl-logo.png';
 	import Typography from '$lib/components/custom-ui/typography';
 	import Image from '$lib/components/custom-ui/image';
+	import agfblLogo from '$lib/assets/agfbl-logo.png?enhanced';
 </script>
 
 <div class="flex gap-2">
