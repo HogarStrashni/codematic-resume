@@ -6,12 +6,20 @@
 </script>
 
 <div class="flex max-w-fit gap-2">
-	<a href={link} class="inline-block shrink-0 rounded border px-5 py-2">
+	<a
+		href={link}
+		aria-label="Link to Web App"
+		class="inline-block shrink-0 rounded border px-5 py-2"
+	>
 		<Link class="size-4" />
 	</a>
 
 	{#if github}
-		<a href={github ?? undefined} class="inline-block shrink-0 rounded border px-5 py-2">
+		<a
+			href={github ?? undefined}
+			aria-label="Github"
+			class="inline-block shrink-0 rounded border px-5 py-2"
+		>
 			<Github class="size-4" />
 		</a>
 	{/if}
