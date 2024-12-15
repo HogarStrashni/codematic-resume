@@ -6,8 +6,8 @@
 
 <svg
 	height="24"
-	viewBox="1.5 1.5 21 21"
 	width="24"
+	viewBox="1.5 1.5 21 21"
 	fill="black"
 	stroke="currentColor"
 	stroke-width="0"
