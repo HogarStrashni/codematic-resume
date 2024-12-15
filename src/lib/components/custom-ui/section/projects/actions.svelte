@@ -5,7 +5,7 @@
 	let { link, github }: ActionProps = $props();
 </script>
 
-<div class="flex max-w-fit gap-2">
+<div class="flex max-w-fit gap-2 print:hidden">
 	<a
 		href={link}
 		aria-label="Link to Web App"

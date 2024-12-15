@@ -5,7 +5,7 @@
 </script>
 
 <div class="flex gap-2">
-	<Image src={agfblLogo} alt="AGFBL logo" />
+	<Image src={agfblLogo} alt="AGFBL logo" class="print:hidden" />
 	<div>
 		<Typography fontWeight="bold">
 			Faculty of Architecture, Civil Engineering and Geodesy, <span class="whitespace-nowrap"

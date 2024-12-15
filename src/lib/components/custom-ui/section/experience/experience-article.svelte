@@ -19,7 +19,7 @@
 
 <article class={cn('space-y-2', className)}>
 	<div class="flex gap-2">
-		<Image src={logo} alt={company + ' logo'} />
+		<Image src={logo} alt={company + ' logo'} class="print:hidden" />
 		<div>
 			<Typography tag="h3" fontWeight="bold">{title}</Typography>
 			<Typography>{company}</Typography>
