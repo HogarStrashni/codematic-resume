@@ -1,11 +1,11 @@
 <script lang="ts">
-	import agfblLogo from '$lib/assets/agfbl-logo.png';
 	import Typography from '$lib/components/custom-ui/typography';
-	import { Logo } from '$lib/components/custom-ui/image-wrapper';
+	import Image from '$lib/components/custom-ui/image';
+	import agfblLogo from '$lib/assets/agfbl-logo.png?enhanced';
 </script>
 
 <div class="flex gap-2">
-	<Logo src={agfblLogo} alt="AGFBL logo" />
+	<Image src={agfblLogo} alt="AGFBL logo" />
 	<div>
 		<Typography fontWeight="bold">
 			Faculty of Architecture, Civil Engineering and Geodesy, <span class="whitespace-nowrap"

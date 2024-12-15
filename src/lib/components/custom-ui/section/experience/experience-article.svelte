@@ -6,7 +6,7 @@
 	import Typography from '$lib/components/custom-ui/typography';
 	import { DateRangeDisplay } from '$lib/components/custom-ui/section/experience';
 	import ListTags from '$lib/components/custom-ui/list-tags';
-	import Logo from '$lib/components/custom-ui/image-wrapper/logo.svelte';
+	import Image from '$lib/components/custom-ui/image';
 
 	type ExperienceArticleProps = {
 		articleData: ExperienceData;
@@ -19,7 +19,7 @@
 
 <article class={cn('space-y-2', className)}>
 	<div class="flex gap-2">
-		<Logo src={logo} alt={title + 'logo'} />
+		<Image src={logo} alt={company + ' logo'} />
 		<div>
 			<Typography tag="h3" fontWeight="bold">{title}</Typography>
 			<Typography>{company}</Typography>

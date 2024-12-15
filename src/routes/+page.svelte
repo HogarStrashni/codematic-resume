@@ -6,6 +6,7 @@
 	import Experience from '$lib/components/custom-ui/section/experience';
 	import ListTags from '$lib/components/custom-ui/list-tags/list-tags.svelte';
 	import Education from '$lib/components/custom-ui/section/education/education.svelte';
+	import Projects from '$lib/components/custom-ui/section/projects';
 </script>
 
 <Header />
@@ -26,6 +27,6 @@
 	<ListTags data={skillsData} variant="text" />
 </SectionWrapper>
 
-<SectionWrapper title="Projects">
-	<div>Projects placeholder</div>
+<SectionWrapper title="Side Projects">
+	<Projects />
 </SectionWrapper>

@@ -1,7 +1,7 @@
-import SitecLogo from '$lib/assets/sitec-llc-logo.jpg';
-import ElevateBitsLogo from '$lib/assets/elevatebits-logo.jpg';
-import GeoputLogo from '$lib/assets/geoput-logo.png';
-import RoutingLogo from '$lib/assets/routing-logo.png';
+import SitecLogo from '$lib/assets/sitec-llc-logo.jpg?enhanced';
+import ElevateBitsLogo from '$lib/assets/elevatebits-logo.jpg?enhanced';
+import GeoputLogo from '$lib/assets/geoput-logo.png?enhanced';
+import RoutingLogo from '$lib/assets/routing-logo.png?enhanced';
 
 export const experienceData = [
 	{
