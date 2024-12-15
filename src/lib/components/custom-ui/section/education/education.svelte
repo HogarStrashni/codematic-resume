@@ -13,6 +13,6 @@
 			>
 		</Typography>
 		<Typography>Master of Science in Civil Engineering</Typography>
-		<Typography variant="textSmall" class="italic">Grade: 9.53</Typography>
+		<Typography variant="textSmall" class="italic">Average Grade: 9.53</Typography>
 	</div>
 </div>
