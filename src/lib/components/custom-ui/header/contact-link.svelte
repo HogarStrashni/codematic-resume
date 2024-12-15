@@ -15,7 +15,7 @@
 	<Typography
 		tag="span"
 		variant="textSmall"
-		class="underline underline-offset-4 duration-200 group-hover:text-blue-600 group-active:text-purple-600 print:text-blue-600"
+		class="underline underline-offset-4 duration-200 group-active:text-purple-600 lg:group-hover:text-blue-600 print:text-blue-600"
 	>
 		{text}
 	</Typography>
