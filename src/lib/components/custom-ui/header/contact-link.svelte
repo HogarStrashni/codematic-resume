@@ -2,7 +2,7 @@
 	import type { SvelteHTMLElements } from 'svelte/elements';
 	import { cn } from '$lib/utils/tailwind';
 
-	import type { ContactInfo } from '$lib/data/contact';
+	import type { ContactInfo } from '$lib/data';
 	import Typography from '$lib/components/custom-ui/typography';
 
 	type ContactLinkProps = ContactInfo & { class?: SvelteHTMLElements['a']['class'] };

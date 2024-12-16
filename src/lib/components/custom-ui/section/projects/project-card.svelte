@@ -2,7 +2,7 @@
 	import type { SvelteHTMLElements } from 'svelte/elements';
 	import { cn } from '$lib/utils/tailwind';
 
-	import type { ProjectData } from '$lib/data/projects';
+	import type { ProjectData } from '$lib/data';
 	import Typography from '$lib/components/custom-ui/typography';
 	import { Actions } from '$lib/components/custom-ui/section/projects';
 

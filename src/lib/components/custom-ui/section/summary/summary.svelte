@@ -2,7 +2,7 @@
 	import type { SvelteHTMLElements } from 'svelte/elements';
 	import { cn } from '$lib/utils/tailwind';
 
-	import { summaryData } from '$lib/data/summary';
+	import { summaryData } from '$lib/data';
 	import Typography from '$lib/components/custom-ui/typography';
 
 	type SummaryProps = { class?: SvelteHTMLElements['div']['class'] };

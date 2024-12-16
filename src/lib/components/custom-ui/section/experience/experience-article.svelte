@@ -2,7 +2,7 @@
 	import type { SvelteHTMLElements } from 'svelte/elements';
 
 	import { cn } from '$lib/utils/tailwind';
-	import type { ExperienceData } from '$lib/data/experience';
+	import type { ExperienceData } from '$lib/data';
 	import Typography from '$lib/components/custom-ui/typography';
 	import { DateRangeDisplay } from '$lib/components/custom-ui/section/experience';
 	import ListTags from '$lib/components/custom-ui/list-tags';

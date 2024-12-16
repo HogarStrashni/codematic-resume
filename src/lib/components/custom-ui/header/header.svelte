@@ -2,7 +2,7 @@
 	import type { SvelteHTMLElements } from 'svelte/elements';
 	import { cn } from '$lib/utils/tailwind';
 
-	import { contactInfo } from '$lib/data/contact';
+	import { contactInfo } from '$lib/data';
 	import Typography from '$lib/components/custom-ui/typography';
 	import { ContactLink } from '$lib/components/custom-ui/header';
 	import Image from '$lib/components/custom-ui/image';

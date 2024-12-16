@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { skillsData } from '$lib/data/skills';
+	import { skillsData } from '$lib/data';
 
 	import StickyToolbar from '$lib/components/custom-ui/sticky-toolbar';
 	import Header from '$lib/components/custom-ui/header';
