@@ -23,7 +23,7 @@
 		<Typography tag="span" variant="caption" fontWeight="light" class="italic">print</Typography>
 	</button>
 	<a
-		href="/resume.pdf"
+		href="/djordje-matic-resume.pdf"
 		download="Djordje Matic - Resume.pdf"
 		class="flex items-center gap-1 rounded border px-4 py-2 shadow-sm duration-200 active:shadow-none lg:flex-col lg:gap-0 lg:hover:bg-gray-50"
 	>
