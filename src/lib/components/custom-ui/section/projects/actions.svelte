@@ -1,11 +1,18 @@
 <script lang="ts">
+	import type { SvelteHTMLElements } from 'svelte/elements';
+	import { cn } from '$lib/utils/tailwind';
+
 	import { Link, Github } from '$lib/icons';
 
-	type ActionProps = { link: string; github: string | null };
-	let { link, github }: ActionProps = $props();
+	type ActionProps = {
+		link: string;
+		github: string | null;
+		class?: SvelteHTMLElements['div']['class'];
+	};
+	let { link, github, class: className }: ActionProps = $props();
 </script>
 
-<div class="flex max-w-fit gap-2 print:hidden">
+<div class={cn('flex max-w-fit gap-2 print:hidden', className)}>
 	<a
 		href={link}
 		aria-label="Link to Web App"
