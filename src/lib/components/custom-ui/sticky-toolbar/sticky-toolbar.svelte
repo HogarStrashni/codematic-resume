@@ -20,7 +20,7 @@
 		class="hidden flex-col items-center rounded border px-6 py-2 shadow-sm duration-200 active:shadow-none lg:flex lg:hover:bg-gray-50"
 	>
 		<Printer class="size-4" />
-		<Typography tag="span" variant="caption" class="italic">print</Typography>
+		<Typography tag="span" variant="caption" fontWeight="light" class="italic">print</Typography>
 	</button>
 	<a
 		href="/resume.pdf"
@@ -28,6 +28,6 @@
 		class="flex items-center gap-1 rounded border px-4 py-2 shadow-sm duration-200 active:shadow-none lg:flex-col lg:gap-0 lg:hover:bg-gray-50"
 	>
 		<Download class="size-4" />
-		<Typography tag="span" variant="caption" class="italic">download</Typography>
+		<Typography tag="span" variant="caption" fontWeight="light" class="italic">download</Typography>
 	</a>
 </div>

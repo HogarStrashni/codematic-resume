@@ -8,7 +8,7 @@
 	width="24"
 	height="24"
 	viewBox="0 0 24 24"
-	fill="black"
+	fill="#374151"
 	stroke="currentColor"
 	stroke-width="0"
 	stroke-linecap="round"
