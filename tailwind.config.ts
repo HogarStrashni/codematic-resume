@@ -7,7 +7,8 @@ export default {
 	theme: {
 		extend: {
 			boxShadow: {
-				sm: '1px 1px 2px 0 rgb(0 0 0 / 0.08)'
+				sm: '1px 1px 2px 0 rgb(0 0 0 / 0.08)',
+				glass: '0 4px 6px rgb(255 255 255 / 0.92)'
 			}
 		}
 	},
