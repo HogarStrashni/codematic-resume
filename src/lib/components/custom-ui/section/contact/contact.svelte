@@ -8,8 +8,8 @@
 	import Image from '$lib/components/custom-ui/image';
 	import avatarImage from '$lib/assets/avatar-image.png?enhanced';
 
-	type HeaderProps = { class?: SvelteHTMLElements['header']['class'] };
-	let { class: className }: HeaderProps = $props();
+	type ContactProps = { class?: SvelteHTMLElements['header']['class'] };
+	let { class: className }: ContactProps = $props();
 </script>
 
 <section class={cn('space-y-2', className)}>
