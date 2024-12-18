@@ -5,8 +5,8 @@
 	import Typography from '$lib/components/custom-ui/typography';
 	import { Printer, Download } from '$lib/icons';
 
-	type StickyToolbarProps = { class?: SvelteHTMLElements['div']['class'] };
-	let { class: className }: StickyToolbarProps = $props();
+	type HeaderProps = { class?: SvelteHTMLElements['div']['class'] };
+	let { class: className }: HeaderProps = $props();
 </script>
 
 <header
