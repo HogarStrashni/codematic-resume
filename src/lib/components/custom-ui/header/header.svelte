@@ -12,7 +12,7 @@
 	let { class: className }: HeaderProps = $props();
 </script>
 
-<header class={cn('space-y-2', className)}>
+<section class={cn('space-y-2', className)}>
 	<Image src={avatarImage} alt="Đorđe Matić avatar" class="size-24 rounded-full" />
 
 	<Typography tag="h1" variant="heading" fontWeight="bold">
@@ -29,4 +29,4 @@
 			<ContactLink {...data} class="flex max-w-fit items-center gap-2" />
 		{/each}
 	</div>
-</header>
+</section>

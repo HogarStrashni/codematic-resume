@@ -9,7 +9,7 @@
 	let { class: className }: StickyToolbarProps = $props();
 </script>
 
-<div
+<header
 	class={cn(
 		'sticky top-16 -mx-1 flex -translate-y-16 items-center justify-end gap-2 bg-white/85 py-3 shadow-glass backdrop-blur-sm sm:-mb-4 print:hidden',
 		className
@@ -30,4 +30,4 @@
 		<Download class="size-4" />
 		<Typography tag="span" variant="caption" fontWeight="light" class="italic">download</Typography>
 	</a>
-</div>
+</header>
