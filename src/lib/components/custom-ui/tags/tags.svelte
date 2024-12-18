@@ -1,14 +1,15 @@
 <script lang="ts">
-	import Typography, { type TextVariantProps } from '$lib/components/custom-ui/typography';
-	import { cn } from '$lib/utils/tailwind';
 	import type { SvelteHTMLElements } from 'svelte/elements';
+	import { cn } from '$lib/utils/tailwind';
 
-	type ListTagsProps = {
+	import Typography, { type TextVariantProps } from '$lib/components/custom-ui/typography';
+
+	type TagsProps = {
 		data: Array<string>;
 		variant?: TextVariantProps['variant'];
 		class?: SvelteHTMLElements['span']['class'];
 	};
-	let { data = [], variant = 'textSmall', class: className }: ListTagsProps = $props();
+	let { data = [], variant = 'textSmall', class: className }: TagsProps = $props();
 
 	const skillsString = data.join(' • ');
 </script>

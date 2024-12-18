@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { SvelteHTMLElements } from 'svelte/elements';
-
 	import { cn } from '$lib/utils/tailwind';
+
 	import type { ExperienceData } from '$lib/data';
 	import Typography from '$lib/components/custom-ui/typography';
 	import { DateRangeDisplay } from '$lib/components/custom-ui/section/experience';
-	import ListTags from '$lib/components/custom-ui/list-tags';
+	import Tags from '$lib/components/custom-ui/tags';
 	import Image from '$lib/components/custom-ui/image';
 
 	type ExperienceArticleProps = {
@@ -28,5 +28,5 @@
 	</div>
 	<Typography variant="textSmall">{description}</Typography>
 
-	<ListTags data={technologies} />
+	<Tags data={technologies} />
 </article>

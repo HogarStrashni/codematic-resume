@@ -2,31 +2,32 @@
 	import type { SvelteHTMLElements } from 'svelte/elements';
 	import { cn } from '$lib/utils/tailwind';
 
-	import { contactInfo } from '$lib/data';
 	import Typography from '$lib/components/custom-ui/typography';
-	import { ContactLink } from '$lib/components/custom-ui/header';
-	import Image from '$lib/components/custom-ui/image';
-	import avatarImage from '$lib/assets/avatar-image.png?enhanced';
+	import { Printer, Download } from '$lib/icons';
 
-	type HeaderProps = { class?: SvelteHTMLElements['header']['class'] };
+	type HeaderProps = { class?: SvelteHTMLElements['div']['class'] };
 	let { class: className }: HeaderProps = $props();
 </script>
 
-<header class={cn('space-y-2', className)}>
-	<Image src={avatarImage} alt="Đorđe Matić avatar" class="size-24 rounded-full" />
-
-	<Typography tag="h1" variant="heading" fontWeight="bold">
-		Đorđe Matić
-		<span class="sr-only">resume</span>
-	</Typography>
-	<div>
-		<Typography>Software Developer | Frontend Focused</Typography>
-		<Typography>Banja Luka, Bosnia and Herzegovina</Typography>
-	</div>
-
-	<div class="mt-4 grid gap-2 sm:grid-cols-2">
-		{#each contactInfo as data (data.id)}
-			<ContactLink {...data} class="flex max-w-fit items-center gap-2" />
-		{/each}
-	</div>
+<header
+	class={cn(
+		'sticky top-16 -mx-1 flex -translate-y-16 items-center justify-end gap-2 bg-white/85 py-3 shadow-glass backdrop-blur-sm sm:-mb-4 print:hidden',
+		className
+	)}
+>
+	<button
+		onclick={() => window.print()}
+		class="hidden flex-col items-center rounded border px-6 py-2 shadow-sm duration-200 active:shadow-none lg:flex lg:hover:bg-gray-50"
+	>
+		<Printer class="size-4" />
+		<Typography tag="span" variant="caption" fontWeight="light" class="italic">print</Typography>
+	</button>
+	<a
+		href="/djordje-matic-resume.pdf"
+		download="Djordje Matic - Resume.pdf"
+		class="flex items-center gap-1 rounded border px-4 py-2 shadow-sm duration-200 active:shadow-none lg:flex-col lg:gap-0 lg:hover:bg-gray-50"
+	>
+		<Download class="size-4" />
+		<Typography tag="span" variant="caption" fontWeight="light" class="italic">download</Typography>
+	</a>
 </header>

@@ -5,9 +5,9 @@
 	import type { ContactInfo } from '$lib/data';
 	import Typography from '$lib/components/custom-ui/typography';
 
-	type ContactLinkProps = ContactInfo & { class?: SvelteHTMLElements['a']['class'] };
+	type LinkProps = ContactInfo & { class?: SvelteHTMLElements['a']['class'] };
 
-	let { text, href, icon: Icon, class: className }: ContactLinkProps = $props();
+	let { text, href, icon: Icon, class: className }: LinkProps = $props();
 </script>
 
 <a {href} target="_blank" class={cn('group/link', className)}>
