@@ -3,7 +3,6 @@
 	import { page } from '$app/stores';
 
 	let { children } = $props();
-	$inspect($page.url.origin);
 </script>
 
 <svelte:head>
