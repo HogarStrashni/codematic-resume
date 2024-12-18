@@ -4,7 +4,7 @@
 
 	import { contactInfo } from '$lib/data';
 	import Typography from '$lib/components/custom-ui/typography';
-	import { ContactLink } from '$lib/components/custom-ui/header';
+	import { Link } from '$lib/components/custom-ui/section/contact';
 	import Image from '$lib/components/custom-ui/image';
 	import avatarImage from '$lib/assets/avatar-image.png?enhanced';
 
@@ -26,7 +26,7 @@
 
 	<div class="mt-4 grid gap-2 sm:grid-cols-2">
 		{#each contactInfo as data (data.id)}
-			<ContactLink {...data} class="flex max-w-fit items-center gap-2" />
+			<Link {...data} class="flex max-w-fit items-center gap-2" />
 		{/each}
 	</div>
 </section>
