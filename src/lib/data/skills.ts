@@ -6,7 +6,9 @@ export const skillsData = [
 	'Cascading Style Sheets (CSS)',
 	'Tailwind CSS',
 	'Front-End Development',
+	'TanStack Virtual',
 	'Git',
 	'RDBMS (PostgreSQL, SQLite) / SQL',
-	'Drizzle ORM'
+	'Drizzle ORM',
+	'Playwright'
 ];
