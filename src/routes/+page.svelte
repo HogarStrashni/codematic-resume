@@ -11,7 +11,7 @@
 	import Projects from '$lib/components/custom-ui/section/projects';
 </script>
 
-<Header />
+<Header class="-mx-4 px-4 sm:-mx-8 sm:px-8 md:-mx-16 md:px-16" />
 
 <Contact />
 
