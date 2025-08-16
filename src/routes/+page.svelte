@@ -15,11 +15,11 @@
 
 <Contact />
 
-<SectionWrapper title="Summary">
+<SectionWrapper title="Summary" class="mt-12">
 	<Summary />
 </SectionWrapper>
 
-<SectionWrapper title="Work Experience">
+<SectionWrapper title="Work Experience" class="mt-12">
 	<Experience />
 </SectionWrapper>
 

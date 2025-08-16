@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { SvelteHTMLElements } from 'svelte/elements';
 	import { cn } from '$lib/utils/tailwind';
+	import { toPdf } from '$lib/state/to-pdf.svelte';
 
 	import type { ExperienceData } from '$lib/data';
 	import Typography from '$lib/components/custom-ui/typography';
@@ -19,7 +20,7 @@
 
 <article class={cn('space-y-2', className)}>
 	<div class="flex gap-2">
-		<Image src={logo} alt={company + ' logo'} class="print:hidden" />
+		<Image src={logo} alt={company + ' logo'} class={cn(!toPdf.isDownloadMode && 'print:hidden')} />
 		<div>
 			<Typography tag="h3" fontWeight="bold">{title}</Typography>
 			<Typography>{company}</Typography>
