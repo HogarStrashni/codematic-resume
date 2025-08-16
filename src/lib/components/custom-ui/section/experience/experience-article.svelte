@@ -1,33 +1,33 @@
 <script lang="ts">
-	import type { SvelteHTMLElements } from 'svelte/elements';
-	import { cn } from '$lib/utils/tailwind';
-	import { toPdf } from '$lib/state/to-pdf.svelte';
+  import type { SvelteHTMLElements } from 'svelte/elements';
+  import { cn } from '$lib/utils/tailwind';
+  import { toPdf } from '$lib/state/to-pdf.svelte';
 
-	import type { ExperienceData } from '$lib/data';
-	import Typography from '$lib/components/custom-ui/typography';
-	import { DateRangeDisplay } from '$lib/components/custom-ui/section/experience';
-	import Tags from '$lib/components/custom-ui/tags';
-	import Image from '$lib/components/custom-ui/image';
+  import type { ExperienceData } from '$lib/data';
+  import Typography from '$lib/components/custom-ui/typography';
+  import { DateRangeDisplay } from '$lib/components/custom-ui/section/experience';
+  import Tags from '$lib/components/custom-ui/tags';
+  import Image from '$lib/components/custom-ui/image';
 
-	type ExperienceArticleProps = {
-		articleData: ExperienceData;
-		class?: SvelteHTMLElements['article']['class'];
-	};
-	let { articleData, class: className }: ExperienceArticleProps = $props();
+  type ExperienceArticleProps = {
+    articleData: ExperienceData;
+    class?: SvelteHTMLElements['article']['class'];
+  };
+  let { articleData, class: className }: ExperienceArticleProps = $props();
 
-	const { title, company, logo, startDate, endDate, description, technologies } = articleData;
+  const { title, company, logo, startDate, endDate, description, technologies } = articleData;
 </script>
 
 <article class={cn('space-y-2', className)}>
-	<div class="flex gap-2">
-		<Image src={logo} alt={company + ' logo'} class={cn(!toPdf.isDownloadMode && 'print:hidden')} />
-		<div>
-			<Typography tag="h3" fontWeight="bold">{title}</Typography>
-			<Typography>{company}</Typography>
-			<DateRangeDisplay {startDate} {endDate} />
-		</div>
-	</div>
-	<Typography variant="textSmall">{description}</Typography>
+  <div class="flex gap-2">
+    <Image src={logo} alt={company + ' logo'} class={cn(!toPdf.isDownloadMode && 'print:hidden')} />
+    <div>
+      <Typography tag="h3" fontWeight="bold">{title}</Typography>
+      <Typography>{company}</Typography>
+      <DateRangeDisplay {startDate} {endDate} />
+    </div>
+  </div>
+  <Typography variant="textSmall">{description}</Typography>
 
-	<Tags data={technologies} />
+  <Tags data={technologies} />
 </article>

@@ -5,12 +5,12 @@ import { skillsData } from './skills';
 import { summaryData } from './summary';
 
 export {
-	contactInfo,
-	experienceData,
-	projectsData,
-	skillsData,
-	summaryData,
-	type ContactInfo,
-	type ExperienceData,
-	type ProjectData
+  contactInfo,
+  experienceData,
+  projectsData,
+  skillsData,
+  summaryData,
+  type ContactInfo,
+  type ExperienceData,
+  type ProjectData
 };
