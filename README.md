@@ -6,10 +6,10 @@ Feel free to explore my work and reach out if you're interested in collaborating
 
 ## Developing
 
-After cloning or copying a project and installing dependencies with `pnpm install`, you can start the development server:
+After cloning or copying a project and installing dependencies with `bun install`, you can start the development server:
 
 ```bash
-pnpm dev
+bun run dev
 ```
 
 ## Building
@@ -17,9 +17,7 @@ pnpm dev
 To create a production version of your app:
 
 ```bash
-pnpm build
+bun run deploy
 ```
 
-You can preview the production build with `pnpm preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+You can preview the production build with `bun run preview`.
