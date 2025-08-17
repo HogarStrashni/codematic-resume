@@ -3,8 +3,8 @@ import { MailOpen, Phone, Linkedin, Github } from '$lib/icons';
 export const contactInfo = [
   {
     id: 'email',
-    text: 'djordje.matic@inzenjer.org',
-    href: 'mailto:djordje.matic@inzenjer.org',
+    text: 'djordje@codematic.cc',
+    href: 'mailto:djordje@codematic.cc',
     icon: MailOpen
   },
   {
