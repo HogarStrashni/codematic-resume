@@ -4,7 +4,7 @@
  */
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "my-website",
+  "name": "my-resume",
   "main": ".svelte-kit/cloudflare/_worker.js",
   "compatibility_date": "2025-08-16",
   "compatibility_flags": ["nodejs_als"],
