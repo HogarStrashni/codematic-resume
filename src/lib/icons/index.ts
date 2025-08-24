@@ -7,7 +7,8 @@ import Github from './github.svelte';
 import Link from './link.svelte';
 import Download from './download.svelte';
 import Printer from './printer.svelte';
+import FileText from './file-text.svelte';
 
 type IconProps = { class?: SvelteHTMLElements['svg']['class'] };
 
-export { MailOpen, Phone, Linkedin, Github, Link, Download, Printer, type IconProps };
+export { MailOpen, Phone, Linkedin, Github, Link, Download, Printer, FileText, type IconProps };
