@@ -1,12 +1,30 @@
 <script lang="ts">
+  import { tick } from 'svelte';
   import type { SvelteHTMLElements } from 'svelte/elements';
+  import { dev } from '$app/environment';
   import { cn } from '$lib/utils/tailwind';
+  import { toPdf } from '$lib/state/to-pdf.svelte';
 
   import Typography from '$lib/components/custom-ui/typography';
-  import { Printer, Download } from '$lib/icons';
+  import { Printer, Download, FileText } from '$lib/icons';
 
   type HeaderProps = { class?: SvelteHTMLElements['div']['class'] };
   let { class: className }: HeaderProps = $props();
+
+  const printToPdfFile = async () => {
+    if (!dev) {
+      return;
+    }
+    toPdf.isDownloadMode = true;
+    // Wait for the next tick so the DOM can update
+    await tick();
+    const onAfterPrint = () => {
+      toPdf.isDownloadMode = false;
+      window.removeEventListener('afterprint', onAfterPrint);
+    };
+    window.addEventListener('afterprint', onAfterPrint);
+    window.print();
+  };
 </script>
 
 <header
@@ -15,6 +33,15 @@
     className
   )}
 >
+  {#if dev}
+    <button
+      onclick={() => printToPdfFile()}
+      class="mr-4 hidden flex-col items-center rounded border bg-red-50 px-6 py-2 shadow-sm duration-200 active:shadow-none lg:flex lg:hover:bg-red-100"
+    >
+      <FileText class="size-4" />
+      <Typography tag="span" variant="caption" fontWeight="light" class="italic">to pdf</Typography>
+    </button>
+  {/if}
   <button
     onclick={() => window.print()}
     class="hidden flex-col items-center rounded border bg-white px-6 py-2 shadow-sm duration-200 active:shadow-none lg:flex lg:hover:bg-gray-50"

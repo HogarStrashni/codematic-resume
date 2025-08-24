@@ -1,9 +1,9 @@
 /*
 *************************************************
   When creating File resume for download
-    1. change isDownloadMode = $state(true)
-    2. print-> format paper to letter/portrait
-    3. save as PDF
+  (only available in development mode)
+    1. print-> format paper to letter/portrait
+    2. save as PDF
 *************************************************
 */
 
