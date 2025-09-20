@@ -3,8 +3,6 @@
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/container-queries';
 
-
-
 @theme inline {
   --shadow-sm: 1px 1px 2px 0 rgb(0 0 0 / 0.08);
   --shadow-glass: 0 4px 6px rgb(255 255 255 / 0.92);
@@ -14,4 +12,9 @@
   * {
     @apply border-gray-200;
   }
+}
+
+@page {
+  size: Letter;
+  margin: 0.4in;
 }
