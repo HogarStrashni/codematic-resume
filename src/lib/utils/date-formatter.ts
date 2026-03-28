@@ -20,21 +20,29 @@ export const formatDate = (date: string) => {
   return `${month} ${year}`;
 };
 
+const formatUnit = (value: number, unit: string) => `${value} ${unit}${value === 1 ? '' : 's'}`;
+
 export const getDuration = (startDate: string, endDate: string | null) => {
   const start = new Date(startDate);
   const end = new Date(endDate ?? Date.now());
-  const diffDays = Math.abs((end.getTime() - start.getTime()) / 86400000);
 
-  const years = Math.floor(diffDays / 365);
-  const months = Math.round((diffDays % 365) / 30);
+  if (start > end) throw new Error('Error starting or ending job date');
 
-  if (years === 0) {
-    return `${months} ${months === 1 ? 'month' : 'months'}`;
+  let years = end.getFullYear() - start.getFullYear();
+  let months = end.getMonth() - start.getMonth();
+  const days = end.getDate() - start.getDate();
+
+  if (days > 7) {
+    months += 1;
   }
 
-  if (months === 12) {
-    return `${years + 1} ${years === 0 ? 'year' : 'years'}, 0 months`;
+  if (months < 0) {
+    years -= 1;
+    months += 12;
   }
 
-  return `${years} ${years === 1 ? 'year' : 'years'}, ${months} ${months === 1 ? 'month' : 'months'}`;
+  if (years === 0) return formatUnit(months, 'month');
+  if (months === 0) return formatUnit(years, 'year');
+
+  return `${formatUnit(years, 'year')}, ${formatUnit(months, 'month')}`;
 };
