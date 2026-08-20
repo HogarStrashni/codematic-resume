@@ -3,16 +3,20 @@
   import { getDuration, formatDate } from '$lib/utils/date-formatter';
   import Typography from '$lib/components/custom-ui/typography';
 
+  import type { Language } from '$lib/types';
+
   type ExperienceArticleProps = {
     startDate: string;
     endDate: string | null;
+    lang: Language;
     class?: SvelteHTMLElements['p']['class'];
   };
-  let { startDate, endDate, class: className }: ExperienceArticleProps = $props();
+
+  const { startDate, endDate, lang, class: className }: ExperienceArticleProps = $props();
 
   const start = formatDate(startDate);
   const end = endDate ? formatDate(endDate) : 'Present';
-  const diff = getDuration(startDate, endDate);
+  const diff = getDuration(startDate, endDate, lang);
 </script>
 
 <Typography variant="textSmall" class={className}>

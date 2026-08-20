@@ -2,15 +2,21 @@
   import type { SvelteHTMLElements } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
-  import { experienceData } from '$lib/data';
   import { ExperienceArticle } from '$lib/components/custom-ui/section/experience';
 
-  type ExperienceProps = { class?: SvelteHTMLElements['div']['class'] };
-  let { class: className }: ExperienceProps = $props();
+  import type { ExperienceData, Language } from '$lib/types';
+
+  type ExperienceProps = {
+    experienceData: ExperienceData;
+    lang: Language;
+    class?: SvelteHTMLElements['div']['class'];
+  };
+
+  const { experienceData, lang, class: className }: ExperienceProps = $props();
 </script>
 
 <div class={cn('space-y-6', className)}>
   {#each experienceData as articleData, idx (idx)}
-    <ExperienceArticle {articleData} />
+    <ExperienceArticle {articleData} {lang} />
   {/each}
 </div>

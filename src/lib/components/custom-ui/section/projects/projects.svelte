@@ -2,11 +2,16 @@
   import type { SvelteHTMLElements } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
-  import { projectsData } from '$lib/data';
   import { ProjectCard } from '$lib/components/custom-ui/section/projects';
 
-  type ProjectsProps = { class?: SvelteHTMLElements['div']['class'] };
-  let { class: className }: ProjectsProps = $props();
+  import type { ProjectData } from '$lib/types';
+
+  type ProjectsProps = {
+    projectsData: ProjectData;
+    class?: SvelteHTMLElements['div']['class'];
+  };
+
+  const { projectsData, class: className }: ProjectsProps = $props();
 </script>
 
 <div class={cn('space-y-6', className)}>

@@ -8,8 +8,16 @@
   import Typography from '$lib/components/custom-ui/typography';
   import { Printer, Download, FileText } from '$lib/icons';
 
-  type HeaderProps = { class?: SvelteHTMLElements['div']['class'] };
-  let { class: className }: HeaderProps = $props();
+  import type { DownloadFileMetadata } from '$lib/types';
+
+  type HeaderProps = {
+    downloadFileMetadata: DownloadFileMetadata;
+    class?: SvelteHTMLElements['div']['class'];
+  };
+
+  const { downloadFileMetadata, class: className }: HeaderProps = $props();
+
+  const { href, download } = downloadFileMetadata;
 
   const printToPdfFile = async () => {
     if (!dev) {
@@ -50,8 +58,8 @@
     <Typography tag="span" variant="caption" fontWeight="light" class="italic">print</Typography>
   </button>
   <a
-    href="/djordje-matic-resume.pdf"
-    download="Djordje Matic - Resume.pdf"
+    {href}
+    {download}
     class="flex items-center gap-1 rounded border bg-white px-4 py-2 shadow-sm duration-200 active:shadow-none lg:flex-col lg:gap-0 lg:hover:bg-gray-50"
   >
     <Download class="size-4" />

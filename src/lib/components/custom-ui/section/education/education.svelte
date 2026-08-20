@@ -7,8 +7,16 @@
   import Image from '$lib/components/custom-ui/image';
   import agfblLogo from '$lib/assets/agfbl-logo.png?enhanced';
 
-  type EducationProps = { class?: SvelteHTMLElements['div']['class'] };
-  let { class: className }: EducationProps = $props();
+  import type { EducationData } from '$lib/types';
+
+  type EducationProps = {
+    educationData: EducationData;
+    class?: SvelteHTMLElements['div']['class'];
+  };
+
+  const { educationData, class: className }: EducationProps = $props();
+
+  const { faculty, university, degree, grade } = educationData;
 </script>
 
 <div class="flex gap-2">
@@ -19,11 +27,9 @@
   />
   <div>
     <Typography fontWeight="bold">
-      Faculty of Architecture, Civil Engineering and Geodesy, <span class="whitespace-nowrap"
-        >University of Banja Luka</span
-      >
+      {faculty}, <span class="whitespace-nowrap">{university}</span>
     </Typography>
-    <Typography>Master of Science in Civil Engineering</Typography>
-    <Typography variant="textSmall" class="italic">Average Grade: 9.53</Typography>
+    <Typography>{degree}</Typography>
+    <Typography variant="textSmall" class="italic">{grade}</Typography>
   </div>
 </div>

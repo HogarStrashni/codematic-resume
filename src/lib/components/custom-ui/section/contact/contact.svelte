@@ -2,14 +2,22 @@
   import type { SvelteHTMLElements } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
-  import { contactInfo } from '$lib/data';
   import Typography from '$lib/components/custom-ui/typography';
   import { Link } from '$lib/components/custom-ui/section/contact';
   import Image from '$lib/components/custom-ui/image';
   import avatarImage from '$lib/assets/avatar-image.jpg?enhanced';
 
-  type ContactProps = { class?: SvelteHTMLElements['header']['class'] };
-  let { class: className }: ContactProps = $props();
+  import type { BasicInfo, ContactInfo } from '$lib/types';
+
+  type ContactProps = {
+    basicInfo: BasicInfo;
+    contactInfo: ContactInfo;
+    class?: SvelteHTMLElements['header']['class'];
+  };
+
+  const { basicInfo, contactInfo, class: className }: ContactProps = $props();
+
+  const { profession, residence } = basicInfo;
 </script>
 
 <section class={cn('space-y-2', className)}>
@@ -20,8 +28,8 @@
     <span class="sr-only">resume</span>
   </Typography>
   <div>
-    <Typography>Software Developer | Frontend Focused</Typography>
-    <Typography>Banja Luka, Bosnia and Herzegovina</Typography>
+    <Typography>{profession}</Typography>
+    <Typography>{residence}</Typography>
   </div>
 
   <div class="mt-4 grid gap-2 sm:grid-cols-2">

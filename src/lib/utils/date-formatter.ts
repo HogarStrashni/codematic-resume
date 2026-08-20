@@ -1,3 +1,7 @@
+import type { Language } from '$lib/types';
+
+type Unit = 'year' | 'month';
+
 const months = [
   'Jan',
   'Feb',
@@ -20,9 +24,21 @@ export const formatDate = (date: string) => {
   return `${month} ${year}`;
 };
 
-const formatUnit = (value: number, unit: string) => `${value} ${unit}${value === 1 ? '' : 's'}`;
+const formatUnit = (value: number, unit: Unit, lang: Language) => {
+  if (lang === 'en') {
+    return `${value} ${unit}${value === 1 ? '' : 's'}`;
+  }
 
-export const getDuration = (startDate: string, endDate: string | null) => {
+  if (unit === 'year') {
+    return `${value} ${value >= 2 && value <= 4 ? 'godine' : 'godina'}`;
+  }
+
+  if (unit === 'month') {
+    return `${value} ${value === 1 ? 'mesec' : value >= 2 && value <= 4 ? 'meseca' : 'meseci'}`;
+  }
+};
+
+export const getDuration = (startDate: string, endDate: string | null, lang: 'en' | 'sr') => {
   const start = new Date(startDate);
   const end = new Date(endDate ?? Date.now());
 
@@ -41,8 +57,8 @@ export const getDuration = (startDate: string, endDate: string | null) => {
     months += 12;
   }
 
-  if (years === 0) return formatUnit(months, 'month');
-  if (months === 0) return formatUnit(years, 'year');
+  if (years === 0) return formatUnit(months, 'month', lang);
+  if (months === 0) return formatUnit(years, 'year', lang);
 
-  return `${formatUnit(years, 'year')}, ${formatUnit(months, 'month')}`;
+  return `${formatUnit(years, 'year', lang)}, ${formatUnit(months, 'month', lang)}`;
 };

@@ -3,17 +3,20 @@
   import { cn } from '$lib/utils/tailwind';
   import { toPdf } from '$lib/state/to-pdf.svelte';
 
-  import type { ExperienceData } from '$lib/data';
   import Typography from '$lib/components/custom-ui/typography';
   import { DateRangeDisplay } from '$lib/components/custom-ui/section/experience';
   import Tags from '$lib/components/custom-ui/tags';
   import Image from '$lib/components/custom-ui/image';
 
+  import type { ExperienceDataSingle, Language } from '$lib/types';
+
   type ExperienceArticleProps = {
-    articleData: ExperienceData;
+    articleData: ExperienceDataSingle;
+    lang: Language;
     class?: SvelteHTMLElements['article']['class'];
   };
-  let { articleData, class: className }: ExperienceArticleProps = $props();
+
+  const { articleData, lang, class: className }: ExperienceArticleProps = $props();
 
   const { title, company, logo, startDate, endDate, description, technologies } = articleData;
 </script>
@@ -24,7 +27,7 @@
     <div>
       <Typography tag="h3" fontWeight="bold">{title}</Typography>
       <Typography>{company}</Typography>
-      <DateRangeDisplay {startDate} {endDate} />
+      <DateRangeDisplay {startDate} {endDate} {lang} />
     </div>
   </div>
   <Typography variant="textSmall">{description}</Typography>
