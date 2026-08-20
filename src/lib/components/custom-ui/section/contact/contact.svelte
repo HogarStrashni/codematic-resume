@@ -2,14 +2,20 @@
   import type { SvelteHTMLElements } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
-  import { basicInfo, contactInfo } from '$lib/data/en';
   import Typography from '$lib/components/custom-ui/typography';
   import { Link } from '$lib/components/custom-ui/section/contact';
   import Image from '$lib/components/custom-ui/image';
   import avatarImage from '$lib/assets/avatar-image.jpg?enhanced';
 
-  type ContactProps = { class?: SvelteHTMLElements['header']['class'] };
-  let { class: className }: ContactProps = $props();
+  import type { BasicInfo, ContactInfo } from '$lib/types';
+
+  type ContactProps = {
+    basicInfo: BasicInfo;
+    contactInfo: ContactInfo;
+    class?: SvelteHTMLElements['header']['class'];
+  };
+
+  const { basicInfo, contactInfo, class: className }: ContactProps = $props();
 
   const { profession, residence } = basicInfo;
 </script>

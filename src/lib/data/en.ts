@@ -12,13 +12,13 @@ export const sectionTitle = {
   education: 'Education',
   skills: 'Skills',
   sideProjects: 'Side Projects'
-} as const;
+};
 
 // Section -> Basic Info
 export const basicInfo = {
   profession: 'Software Developer | Frontend Focused',
   residence: 'Banja Luka, Bosnia and Herzegovina'
-} as const;
+};
 
 // Section -> Contact Basic Info
 export const contactInfo = [
@@ -46,8 +46,7 @@ export const contactInfo = [
     href: 'https://github.com/hogarstrashni',
     icon: Github
   }
-] as const;
-export type ContactInfo = (typeof contactInfo)[number];
+];
 
 // Section -> Summary
 export const summaryData = [
@@ -164,8 +163,7 @@ export const experienceData = [
       'Focusing on the preparation of project and spatial planning documentation in the field of hydrotechnics. Involved in designing technical solutions for water management and infrastructure projects.',
     technologies: ['AutoCAD', 'MS Office', 'EPANET']
   }
-] as const;
-export type ExperienceData = (typeof experienceData)[number];
+];
 
 // Section -> Education
 export const educationData = {
@@ -173,7 +171,7 @@ export const educationData = {
   university: 'University of Banja Luka',
   degree: 'Master of Science in Civil Engineering',
   grade: 'Average Grade: 9.53'
-} as const;
+};
 
 // Section -> Skills
 export const skillsData = [
@@ -189,7 +187,7 @@ export const skillsData = [
   'RDBMS (PostgreSQL, SQLite) / SQL',
   'Drizzle ORM',
   'Playwright'
-] as const;
+];
 
 // Section -> Side Projects
 export const projectsData = [
@@ -220,5 +218,4 @@ export const projectsData = [
     link: 'https://div-index.vercel.app/',
     github: null
   }
-] as const;
-export type ProjectData = (typeof projectsData)[number];
+];

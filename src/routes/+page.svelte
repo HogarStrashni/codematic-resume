@@ -1,5 +1,14 @@
 <script lang="ts">
-  import { sectionTitle } from '$lib/data/en';
+  import {
+    sectionTitle,
+    basicInfo,
+    contactInfo,
+    summaryData,
+    experienceData,
+    educationData,
+    skillsData,
+    projectsData
+  } from '$lib/data/en';
 
   import SectionWrapper from '$lib/components/custom-ui/section/wrapper';
   import Contact from '$lib/components/custom-ui/section/contact';
@@ -10,24 +19,24 @@
   import Projects from '$lib/components/custom-ui/section/projects';
 </script>
 
-<Contact />
+<Contact {basicInfo} {contactInfo} />
 
 <SectionWrapper title={sectionTitle.summary} class="mt-12">
-  <Summary />
+  <Summary {summaryData} />
 </SectionWrapper>
 
 <SectionWrapper title={sectionTitle.workExperience} class="mt-12">
-  <Experience />
+  <Experience {experienceData} />
 </SectionWrapper>
 
 <SectionWrapper title={sectionTitle.education}>
-  <Education />
+  <Education {educationData} />
 </SectionWrapper>
 
 <SectionWrapper title={sectionTitle.skills}>
-  <Skills />
+  <Skills {skillsData} />
 </SectionWrapper>
 
 <SectionWrapper title={sectionTitle.sideProjects}>
-  <Projects />
+  <Projects {projectsData} />
 </SectionWrapper>

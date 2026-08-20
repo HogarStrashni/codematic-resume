@@ -3,12 +3,13 @@
   import { cn } from '$lib/utils/tailwind';
   import { toPdf } from '$lib/state/to-pdf.svelte';
 
-  import type { ProjectData } from '$lib/data/en';
   import Typography from '$lib/components/custom-ui/typography';
   import { Actions } from '$lib/components/custom-ui/section/projects';
 
+  import type { ProjectDataSingle } from '$lib/types';
+
   type ProjectCardProps = {
-    data: ProjectData;
+    data: ProjectDataSingle;
     class?: SvelteHTMLElements['div']['class'];
   };
   let { data, class: className }: ProjectCardProps = $props();

@@ -2,12 +2,13 @@
   import type { SvelteHTMLElements } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
-  import type { ContactInfo } from '$lib/data/en';
+  import type { ContactInfoSingle } from '$lib/types';
+
   import Typography from '$lib/components/custom-ui/typography';
 
-  type LinkProps = ContactInfo & { class?: SvelteHTMLElements['a']['class'] };
+  type LinkProps = ContactInfoSingle & { class?: SvelteHTMLElements['a']['class'] };
 
-  let { text, href, icon: Icon, class: className }: LinkProps = $props();
+  const { text, href, icon: Icon, class: className }: LinkProps = $props();
 </script>
 
 <a {href} target="_blank" class={cn('group/link', className)}>

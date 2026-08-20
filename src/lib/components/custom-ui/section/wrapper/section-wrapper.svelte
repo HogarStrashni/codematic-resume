@@ -5,12 +5,15 @@
 
   import Typography from '$lib/components/custom-ui/typography';
 
+  import type { SectionTitle } from '$lib/types';
+
   type SectionWrapperProps = {
     children: Snippet;
-    title: string;
+    title: SectionTitle;
     class?: SvelteHTMLElements['section']['class'];
   };
-  let { children, title, class: className }: SectionWrapperProps = $props();
+
+  const { children, title, class: className }: SectionWrapperProps = $props();
 </script>
 
 <section class={cn('mt-9 space-y-6', className)}>

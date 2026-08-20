@@ -3,17 +3,19 @@
   import { cn } from '$lib/utils/tailwind';
   import { toPdf } from '$lib/state/to-pdf.svelte';
 
-  import type { ExperienceData } from '$lib/data/en';
   import Typography from '$lib/components/custom-ui/typography';
   import { DateRangeDisplay } from '$lib/components/custom-ui/section/experience';
   import Tags from '$lib/components/custom-ui/tags';
   import Image from '$lib/components/custom-ui/image';
 
+  import type { ExperienceDataSingle } from '$lib/types';
+
   type ExperienceArticleProps = {
-    articleData: ExperienceData;
+    articleData: ExperienceDataSingle;
     class?: SvelteHTMLElements['article']['class'];
   };
-  let { articleData, class: className }: ExperienceArticleProps = $props();
+
+  const { articleData, class: className }: ExperienceArticleProps = $props();
 
   const { title, company, logo, startDate, endDate, description, technologies } = articleData;
 </script>

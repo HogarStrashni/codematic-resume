@@ -2,11 +2,16 @@
   import type { SvelteHTMLElements } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
-  import { experienceData } from '$lib/data/en';
   import { ExperienceArticle } from '$lib/components/custom-ui/section/experience';
 
-  type ExperienceProps = { class?: SvelteHTMLElements['div']['class'] };
-  let { class: className }: ExperienceProps = $props();
+  import type { ExperienceData } from '$lib/types';
+
+  type ExperienceProps = {
+    experienceData: ExperienceData;
+    class?: SvelteHTMLElements['div']['class'];
+  };
+
+  const { experienceData, class: className }: ExperienceProps = $props();
 </script>
 
 <div class={cn('space-y-6', className)}>

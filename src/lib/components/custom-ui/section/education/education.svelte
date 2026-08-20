@@ -3,13 +3,18 @@
   import { cn } from '$lib/utils/tailwind';
   import { toPdf } from '$lib/state/to-pdf.svelte';
 
-  import { educationData } from '$lib/data/en';
   import Typography from '$lib/components/custom-ui/typography';
   import Image from '$lib/components/custom-ui/image';
   import agfblLogo from '$lib/assets/agfbl-logo.png?enhanced';
 
-  type EducationProps = { class?: SvelteHTMLElements['div']['class'] };
-  let { class: className }: EducationProps = $props();
+  import type { EducationData } from '$lib/types';
+
+  type EducationProps = {
+    educationData: EducationData;
+    class?: SvelteHTMLElements['div']['class'];
+  };
+
+  const { educationData, class: className }: EducationProps = $props();
 
   const { faculty, university, degree, grade } = educationData;
 </script>

@@ -2,11 +2,16 @@
   import type { SvelteHTMLElements } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
-  import { summaryData } from '$lib/data/en';
   import Typography from '$lib/components/custom-ui/typography';
 
-  type SummaryProps = { class?: SvelteHTMLElements['div']['class'] };
-  let { class: className }: SummaryProps = $props();
+  import type { SummaryData } from '$lib/types';
+
+  type SummaryProps = {
+    summaryData: SummaryData;
+    class?: SvelteHTMLElements['div']['class'];
+  };
+
+  const { summaryData, class: className }: SummaryProps = $props();
 </script>
 
 <div class={cn('space-y-2', className)}>
