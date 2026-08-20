@@ -1,4 +1,4 @@
-import { MailOpen, Phone, Linkedin } from '$lib/icons';
+import { MailOpen, Phone, Linkedin, Github } from '$lib/icons';
 import HtecLogo from '$lib/assets/htecgroup-logo.jpg?enhanced';
 import SitecLogo from '$lib/assets/sitec-llc-logo.jpg?enhanced';
 import ElevateBitsLogo from '$lib/assets/elevatebits-logo.jpg?enhanced';
@@ -13,7 +13,7 @@ export const downloadFileMetadata = {
 
 // General -> Section Title
 export const sectionTitle = {
-  summary: 'O meni',
+  summary: 'Profil',
   workExperience: 'Radno iskustvo',
   education: 'Obrazovanje',
   skills: 'Licence'
@@ -28,7 +28,7 @@ export const basicInfo = {
 // Section -> Contact Basic Info
 export const contactInfo = [
   {
-    id: 'email-1',
+    id: 'email',
     text: 'djmatic@agfbl.org',
     href: 'mailto:djmatic@agfbl.org',
     icon: MailOpen
@@ -40,16 +40,16 @@ export const contactInfo = [
     icon: Phone
   },
   {
-    id: 'email-2',
-    text: 'djordje@codematic.cc',
-    href: 'mailto:djordje@codematic.cc',
-    icon: MailOpen
-  },
-  {
     id: 'linkedin',
     text: 'https://linkedin.com/in/djordje-matic',
     href: 'https://linkedin.com/in/djordje-matic',
     icon: Linkedin
+  },
+  {
+    id: 'github',
+    text: 'https://github.com/hogarstrashni',
+    href: 'https://github.com/hogarstrashni',
+    icon: Github
   }
 ];
 
@@ -183,13 +183,13 @@ export const educationData = {
 export const licenceData = [
   {
     typeOfLicence: 'Tehnička dokumentacija',
-    title: 'Licenca za izradu tehničke dokumentacije, hidrotehnička faza i nadzor.',
+    title: 'Licenca za izradu tehničke dokumentacije, hidrotehnička faza i nadzor',
     licensor: 'Ministarstvo za prostorno uređenje, građevinarstvo i ekologiju Republike Srpske',
     licenceNumber: 'ФЛ-7498/17'
   },
   {
     typeOfLicence: 'Prostorno planska dokumentacija',
-    title: 'Licenca za izradu dokumenata prostornog uređenja.',
+    title: 'Licenca za izradu dokumenata prostornog uređenja',
     licensor: 'Ministarstvo za prostorno uređenje, građevinarstvo i ekologiju Republike Srpske',
     licenceNumber: 'ФЛ-8945/20'
   }
