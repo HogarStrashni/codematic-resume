@@ -1,4 +1,5 @@
 import {
+  downloadFileMetadata,
   sectionTitle,
   basicInfo,
   contactInfo,
@@ -9,6 +10,7 @@ import {
   projectsData
 } from '$lib/data/en';
 
+export type DownloadFileMetadata = typeof downloadFileMetadata;
 export type SectionTitle = (typeof sectionTitle)[keyof typeof sectionTitle];
 export type BasicInfo = typeof basicInfo;
 export type ContactInfo = typeof contactInfo;
