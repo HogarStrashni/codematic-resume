@@ -2,6 +2,8 @@
   import '../app.css';
   import { page } from '$app/state';
 
+  import Header from '$lib/components/custom-ui/header';
+
   let { children } = $props();
 </script>
 
@@ -18,5 +20,7 @@
   <meta property="og:url" content={`${page.url.origin}`} />
   <meta property="og:type" content="website" />
 </svelte:head>
+
+<Header class="-mx-4 px-4 sm:-mx-8 sm:px-8 md:-mx-16 md:px-16" />
 
 {@render children()}

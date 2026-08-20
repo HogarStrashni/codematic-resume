@@ -5,6 +5,15 @@ import ElevateBitsLogo from '$lib/assets/elevatebits-logo.jpg?enhanced';
 import GeoputLogo from '$lib/assets/geoput-logo.png?enhanced';
 import RoutingLogo from '$lib/assets/routing-logo.png?enhanced';
 
+// General -> Section Title
+export const sectionTitle = {
+  summary: 'Summary',
+  workExperience: 'Work Experience',
+  education: 'Education',
+  skills: 'Skills',
+  sideProjects: 'Side Projects'
+} as const;
+
 // Section -> Basic Info
 export const basicInfo = {
   profession: 'Software Developer | Frontend Focused',
