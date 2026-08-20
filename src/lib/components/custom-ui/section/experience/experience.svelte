@@ -4,18 +4,19 @@
 
   import { ExperienceArticle } from '$lib/components/custom-ui/section/experience';
 
-  import type { ExperienceData } from '$lib/types';
+  import type { ExperienceData, Language } from '$lib/types';
 
   type ExperienceProps = {
     experienceData: ExperienceData;
+    lang: Language;
     class?: SvelteHTMLElements['div']['class'];
   };
 
-  const { experienceData, class: className }: ExperienceProps = $props();
+  const { experienceData, lang, class: className }: ExperienceProps = $props();
 </script>
 
 <div class={cn('space-y-6', className)}>
   {#each experienceData as articleData, idx (idx)}
-    <ExperienceArticle {articleData} />
+    <ExperienceArticle {articleData} {lang} />
   {/each}
 </div>

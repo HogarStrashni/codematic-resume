@@ -7,9 +7,8 @@
     summaryData,
     experienceData,
     educationData,
-    skillsData,
-    projectsData
-  } from '$lib/data/en';
+    licenceData
+  } from '$lib/data/sr';
 
   import Header from '$lib/components/custom-ui/header';
 
@@ -18,8 +17,7 @@
   import Summary from '$lib/components/custom-ui/section/summary';
   import Experience from '$lib/components/custom-ui/section/experience';
   import Education from '$lib/components/custom-ui/section/education/education.svelte';
-  import Skills from '$lib/components/custom-ui/section/skills';
-  import Projects from '$lib/components/custom-ui/section/projects';
+  import Licence from '$lib/components/custom-ui/section/licnece/licence.svelte';
 </script>
 
 <Header {downloadFileMetadata} class="-mx-4 px-4 sm:-mx-8 sm:px-8 md:-mx-16 md:px-16" />
@@ -31,7 +29,7 @@
 </SectionWrapper>
 
 <SectionWrapper title={sectionTitle.workExperience} class="mt-12">
-  <Experience {experienceData} lang="en" />
+  <Experience {experienceData} lang="sr" />
 </SectionWrapper>
 
 <SectionWrapper title={sectionTitle.education}>
@@ -39,9 +37,5 @@
 </SectionWrapper>
 
 <SectionWrapper title={sectionTitle.skills}>
-  <Skills {skillsData} />
-</SectionWrapper>
-
-<SectionWrapper title={sectionTitle.sideProjects}>
-  <Projects {projectsData} />
+  <Licence {licenceData} />
 </SectionWrapper>

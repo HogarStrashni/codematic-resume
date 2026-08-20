@@ -8,14 +8,15 @@
   import Tags from '$lib/components/custom-ui/tags';
   import Image from '$lib/components/custom-ui/image';
 
-  import type { ExperienceDataSingle } from '$lib/types';
+  import type { ExperienceDataSingle, Language } from '$lib/types';
 
   type ExperienceArticleProps = {
     articleData: ExperienceDataSingle;
+    lang: Language;
     class?: SvelteHTMLElements['article']['class'];
   };
 
-  const { articleData, class: className }: ExperienceArticleProps = $props();
+  const { articleData, lang, class: className }: ExperienceArticleProps = $props();
 
   const { title, company, logo, startDate, endDate, description, technologies } = articleData;
 </script>
@@ -26,7 +27,7 @@
     <div>
       <Typography tag="h3" fontWeight="bold">{title}</Typography>
       <Typography>{company}</Typography>
-      <DateRangeDisplay {startDate} {endDate} />
+      <DateRangeDisplay {startDate} {endDate} {lang} />
     </div>
   </div>
   <Typography variant="textSmall">{description}</Typography>
