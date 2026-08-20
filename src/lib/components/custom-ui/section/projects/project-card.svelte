@@ -3,7 +3,7 @@
   import { cn } from '$lib/utils/tailwind';
   import { toPdf } from '$lib/state/to-pdf.svelte';
 
-  import type { ProjectData } from '$lib/data';
+  import type { ProjectData } from '$lib/data/en';
   import Typography from '$lib/components/custom-ui/typography';
   import { Actions } from '$lib/components/custom-ui/section/projects';
 

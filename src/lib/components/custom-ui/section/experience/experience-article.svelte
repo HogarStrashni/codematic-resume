@@ -3,7 +3,7 @@
   import { cn } from '$lib/utils/tailwind';
   import { toPdf } from '$lib/state/to-pdf.svelte';
 
-  import type { ExperienceData } from '$lib/data';
+  import type { ExperienceData } from '$lib/data/en';
   import Typography from '$lib/components/custom-ui/typography';
   import { DateRangeDisplay } from '$lib/components/custom-ui/section/experience';
   import Tags from '$lib/components/custom-ui/tags';

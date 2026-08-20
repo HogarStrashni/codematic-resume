@@ -2,7 +2,7 @@
   import type { SvelteHTMLElements } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
-  import { projectsData } from '$lib/data';
+  import { projectsData } from '$lib/data/en';
   import { ProjectCard } from '$lib/components/custom-ui/section/projects';
 
   type ProjectsProps = { class?: SvelteHTMLElements['div']['class'] };
