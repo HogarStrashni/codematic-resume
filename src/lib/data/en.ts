@@ -22,6 +22,7 @@ export const sectionTitle = {
 
 // Section -> Basic Info
 export const basicInfo = {
+  name: 'Đorđe Matić',
   profession: 'Software Developer | Frontend Focused',
   residence: 'Banja Luka, Bosnia and Herzegovina'
 };

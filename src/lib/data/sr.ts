@@ -21,6 +21,7 @@ export const sectionTitle = {
 
 // Section -> Basic Info
 export const basicInfo = {
+  name: 'Đorđe Matić',
   profession: 'Diplomirani inženjer građevinarstva | Softverski programer',
   residence: 'Banja Luka, Bosna i Herzegovina'
 };

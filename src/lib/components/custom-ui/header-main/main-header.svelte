@@ -16,7 +16,7 @@
 
 <header
   class={cn(
-    'sticky top-0 mx-auto hidden h-16 max-w-4xl items-center justify-between bg-gray-900 px-4 sm:flex sm:px-8 md:px-16',
+    'sticky top-0 mx-auto hidden h-16 max-w-4xl items-center justify-between sm:flex sm:px-4 md:px-8',
     className
   )}
 >

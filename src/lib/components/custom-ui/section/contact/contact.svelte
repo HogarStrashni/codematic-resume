@@ -21,10 +21,10 @@
 </script>
 
 <section class={cn('space-y-2', className)}>
-  <Image src={avatarImage} alt="Đorđe Matić avatar" class="size-24 rounded-full" />
+  <Image src={avatarImage} alt="{basicInfo.name} avatar" class="size-24 rounded-full" />
 
   <Typography tag="h1" variant="heading" fontWeight="bold">
-    Đorđe Matić
+    {basicInfo.name}
     <span class="sr-only">resume</span>
   </Typography>
   <div>

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { cn } from '$lib/utils/tailwind';
   import type { SvelteHTMLElements } from 'svelte/elements';
+  import { cn } from '$lib/utils/tailwind';
 
   type SeparatorProps = {
     id?: string;
