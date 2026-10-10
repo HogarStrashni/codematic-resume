@@ -11,12 +11,13 @@
   type ImageProps = {
     src: Picture;
     alt?: string;
+    icon?: boolean;
     class?: SvelteHTMLElements['img']['class'];
   };
 
-  let { src, alt = '', class: className }: ImageProps = $props();
+  let { src, alt = '', icon = true, class: className }: ImageProps = $props();
 </script>
 
-<div class={cn('size-8 shrink-0 overflow-hidden rounded border', className)}>
+<div class={cn(icon ? 'size-8 shrink-0 overflow-hidden rounded border' : '', className)}>
   <enhanced:img {src} {alt} />
 </div>

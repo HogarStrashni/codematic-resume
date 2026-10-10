@@ -3,10 +3,11 @@
   import type { SvelteHTMLElements } from 'svelte/elements';
 
   type SeparatorProps = {
+    id?: string;
     class?: SvelteHTMLElements['div']['class'];
   };
 
-  let { class: className }: SeparatorProps = $props();
+  let { id, class: className }: SeparatorProps = $props();
 </script>
 
-<div class={cn('my-12 h-px w-full shrink-0 bg-gray-800', className)}></div>
+<div {id} class={cn('my-12 h-px w-full shrink-0 bg-gray-800', className)}></div>
