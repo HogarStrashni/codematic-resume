@@ -9,4 +9,4 @@
   let { class: className }: SeparatorProps = $props();
 </script>
 
-<div class={cn('my-20 h-px w-full shrink-0 bg-gray-800', className)}></div>
+<div class={cn('my-12 h-px w-full shrink-0 bg-gray-800', className)}></div>
