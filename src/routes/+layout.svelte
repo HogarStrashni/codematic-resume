@@ -6,10 +6,10 @@
 </script>
 
 <svelte:head>
-  <title>Đorđe Matić - Resume</title>
-  <meta name="description" content="Codematic Đorđe Matić Resume - Website" />
+  <title>Đorđe Matić - Portfolio</title>
+  <meta name="description" content="Codematic Đorđe Matić Portfolio - Website" />
 
-  <meta property="og:title" content="Codematic - Đorđe Matić - Resume" />
+  <meta property="og:title" content="Codematic - Đorđe Matić - Portfolio" />
   <meta
     property="og:description"
     content="Explore the professional background, skills, and accomplishments of Đorđe Matić, a passionate software developer."
