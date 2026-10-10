@@ -26,7 +26,12 @@
   </div>
   <Typography variant="textSmall">{text}</Typography>
 
-  <a href={data.link} aria-label="Link to Web App" target="_blank" class="flex items-center gap-2">
+  <a
+    href={data.link}
+    aria-label="Link to Web App"
+    target="_blank"
+    class="flex max-w-fit items-center gap-2 text-blue-800"
+  >
     <Link class="size-4" />
     <Typography variant="caption">Website Link</Typography>
   </a>

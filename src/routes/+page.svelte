@@ -1,4 +1,5 @@
 <script lang="ts">
+  import ContactForm from '$lib/components/custom-ui/contact-form';
   import MainHeader from '$lib/components/custom-ui/header-main';
   import HeroSection from '$lib/components/custom-ui/section/hero-section';
   import Projects from '$lib/components/custom-ui/section/projects-main-page';
@@ -26,16 +27,20 @@
 
     <Separator class="sm:my-20" id="projects" />
 
-    <SectionWrapper title={sectionTitle.sideProjects}>
-      <Projects {projectsData} />
+    <SectionWrapper
+      title={sectionTitle.sideProjects}
+      description="A selection of projects I've built independently, driven by curiosity and a passion for creating things. From experimenting with new technologies to turning ideas into reality, these projects reflect my personal interests and explorations outside of my day-to-day professional work."
+    >
+      <Projects {projectsData} class="mt-8" />
     </SectionWrapper>
 
     <Separator class="sm:my-20" id="contact-me" />
 
-    <SectionWrapper title="Contact Form">
-      <label>
-        <input />
-      </label>
+    <SectionWrapper
+      title="Contact Me"
+      description="Have something interesting in mind? I'm always open to new opportunities, creative collaborations, and conversations with people who enjoy building great things. Whether it's a project idea or just a quick hello, feel free to get in touch."
+    >
+      <ContactForm class="mt-8" />
     </SectionWrapper>
   </div>
 </div>
