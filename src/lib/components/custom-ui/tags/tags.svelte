@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
   import Typography, { type TextVariantProps } from '$lib/components/custom-ui/typography';
@@ -7,7 +7,7 @@
   type TagsProps = {
     data: Array<string>;
     variant?: TextVariantProps['variant'];
-    class?: SvelteHTMLElements['span']['class'];
+    class?: ClassValue;
   };
   let { data = [], variant = 'textSmall', class: className }: TagsProps = $props();
 

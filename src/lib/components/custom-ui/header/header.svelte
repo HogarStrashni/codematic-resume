@@ -1,6 +1,6 @@
 <script lang="ts">
   import { tick } from 'svelte';
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
   import { dev } from '$app/environment';
   import { cn } from '$lib/utils/tailwind';
   import { toPdf } from '$lib/state/to-pdf.svelte';
@@ -12,7 +12,7 @@
 
   type HeaderProps = {
     downloadFileMetadata: DownloadFileMetadata;
-    class?: SvelteHTMLElements['div']['class'];
+    class?: ClassValue;
   };
 
   const { downloadFileMetadata, class: className }: HeaderProps = $props();

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
   import Typography from '$lib/components/custom-ui/typography';
@@ -8,7 +8,7 @@
 
   type SummaryProps = {
     summaryData: SummaryData;
-    class?: SvelteHTMLElements['div']['class'];
+    class?: ClassValue;
   };
 
   const { summaryData, class: className }: SummaryProps = $props();

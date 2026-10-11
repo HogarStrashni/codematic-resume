@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
   import { toPdf } from '$lib/state/to-pdf.svelte';
 
@@ -8,7 +8,7 @@
   type ActionProps = {
     link: string;
     github: string | null;
-    class?: SvelteHTMLElements['div']['class'];
+    class?: ClassValue;
   };
   let { link, github, class: className }: ActionProps = $props();
 </script>

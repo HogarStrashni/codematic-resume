@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
   type SeparatorProps = {
     id?: string;
-    class?: SvelteHTMLElements['div']['class'];
+    class?: ClassValue;
   };
 
   let { id, class: className }: SeparatorProps = $props();

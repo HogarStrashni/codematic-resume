@@ -1,11 +1,11 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
   type ButtonProps = {
     children: Snippet;
-    class?: SvelteHTMLElements['button']['class'];
+    class?: ClassValue;
   };
 
   let { children, class: className }: ButtonProps = $props();

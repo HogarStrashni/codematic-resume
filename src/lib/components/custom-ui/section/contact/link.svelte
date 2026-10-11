@@ -1,12 +1,12 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
   import type { ContactInfoSingle } from '$lib/types';
 
   import Typography from '$lib/components/custom-ui/typography';
 
-  type LinkProps = ContactInfoSingle & { class?: SvelteHTMLElements['a']['class'] };
+  type LinkProps = ContactInfoSingle & { class?: ClassValue };
 
   const { text, href, icon: Icon, class: className }: LinkProps = $props();
 </script>

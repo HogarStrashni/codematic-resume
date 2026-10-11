@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
   import { getDuration, formatDate } from '$lib/utils/date-formatter';
   import Typography from '$lib/components/custom-ui/typography';
 
@@ -9,7 +9,7 @@
     startDate: string;
     endDate: string | null;
     lang: Language;
-    class?: SvelteHTMLElements['p']['class'];
+    class?: ClassValue;
   };
 
   const { startDate, endDate, lang, class: className }: ExperienceArticleProps = $props();

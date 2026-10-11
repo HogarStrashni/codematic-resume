@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
   import { toPdf } from '$lib/state/to-pdf.svelte';
 
@@ -11,7 +11,7 @@
 
   type EducationProps = {
     educationData: EducationData;
-    class?: SvelteHTMLElements['div']['class'];
+    class?: ClassValue;
   };
 
   const { educationData, class: className }: EducationProps = $props();

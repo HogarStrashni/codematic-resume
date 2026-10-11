@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
   import { ProjectCard } from '$lib/components/custom-ui/section/projects';
@@ -8,7 +8,7 @@
 
   type ProjectsProps = {
     projectsData: ProjectData;
-    class?: SvelteHTMLElements['div']['class'];
+    class?: ClassValue;
   };
 
   const { projectsData, class: className }: ProjectsProps = $props();

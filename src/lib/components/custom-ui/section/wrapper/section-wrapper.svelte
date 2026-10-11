@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
   import Typography from '$lib/components/custom-ui/typography';
@@ -10,7 +10,7 @@
   type SectionWrapperProps = {
     children: Snippet;
     title: SectionTitle;
-    class?: SvelteHTMLElements['section']['class'];
+    class?: ClassValue;
   };
 
   const { children, title, class: className }: SectionWrapperProps = $props();

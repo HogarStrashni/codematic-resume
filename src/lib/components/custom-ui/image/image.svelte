@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
   // created by @sveltejs/enhanced-img plugin
@@ -12,7 +12,7 @@
     src: Picture;
     alt?: string;
     icon?: boolean;
-    class?: SvelteHTMLElements['img']['class'];
+    class?: ClassValue;
   };
 
   let { src, alt = '', icon = true, class: className }: ImageProps = $props();

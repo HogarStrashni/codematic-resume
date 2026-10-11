@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
   import Typography from '$lib/components/custom-ui/typography';
   import Image from '$lib/components/custom-ui/image';
   import { cn } from '$lib/utils/tailwind';
@@ -8,7 +8,7 @@
   import transparentLogo from '$lib/assets/codematic-logo.png?enhanced';
 
   type MainHeaderProps = {
-    class?: SvelteHTMLElements['div']['class'];
+    class?: ClassValue;
   };
 
   const { class: className }: MainHeaderProps = $props();

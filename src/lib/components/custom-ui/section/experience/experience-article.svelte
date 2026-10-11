@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
   import { toPdf } from '$lib/state/to-pdf.svelte';
 
@@ -13,7 +13,7 @@
   type ExperienceArticleProps = {
     articleData: ExperienceDataSingle;
     lang: Language;
-    class?: SvelteHTMLElements['article']['class'];
+    class?: ClassValue;
   };
 
   const { articleData, lang, class: className }: ExperienceArticleProps = $props();

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
 
   import Typography from '$lib/components/custom-ui/typography';
@@ -12,7 +12,7 @@
   type ContactProps = {
     basicInfo: BasicInfo;
     contactInfo: ContactInfo;
-    class?: SvelteHTMLElements['header']['class'];
+    class?: ClassValue;
   };
 
   const { basicInfo, contactInfo, class: className }: ContactProps = $props();

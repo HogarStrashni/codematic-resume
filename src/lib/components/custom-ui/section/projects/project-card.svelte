@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
   import { cn } from '$lib/utils/tailwind';
   import { toPdf } from '$lib/state/to-pdf.svelte';
 
@@ -10,7 +10,7 @@
 
   type ProjectCardProps = {
     data: ProjectDataSingle;
-    class?: SvelteHTMLElements['div']['class'];
+    class?: ClassValue;
   };
   let { data, class: className }: ProjectCardProps = $props();
 
