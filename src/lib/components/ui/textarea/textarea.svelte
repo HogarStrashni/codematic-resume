@@ -6,14 +6,19 @@
 
   type TextareaProps = HTMLTextareaAttributes & {
     label: string;
+    error?: string;
     class?: ClassValue;
   };
 
-  let { label, class: className, ...terxtareaProps }: TextareaProps = $props();
+  let { label, class: className, error, ...terxtareaProps }: TextareaProps = $props();
 </script>
 
-<label class="flex flex-col gap-2">
-  <Typography tag="span">{label}</Typography>
-  <textarea {...terxtareaProps} class={cn('rounded-lg border-gray-500 bg-transparent', className)}
-  ></textarea>
-</label>
+<div class="flex flex-col gap-2">
+  <label class="flex flex-col gap-2">
+    <Typography tag="span">{label}</Typography>
+    <textarea {...terxtareaProps} class={cn('rounded-lg  bg-transparent', className)}></textarea>
+  </label>
+  <div class="h-4">
+    <Typography variant="caption" class="text-red-800">{error ?? ''}</Typography>
+  </div>
+</div>

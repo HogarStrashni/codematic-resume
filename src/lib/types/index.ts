@@ -27,3 +27,19 @@ export type ProjectDataSingle = (typeof projectsData)[number];
 export type LicenceData = typeof licenceData;
 
 export type Language = 'en' | 'sr';
+
+export type ContactFormPayload = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+  confirmEmail?: string;
+};
+
+export type FormErrors = Partial<{
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+  root: string;
+}>;
