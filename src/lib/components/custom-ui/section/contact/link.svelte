@@ -1,10 +1,9 @@
 <script lang="ts">
   import type { ClassValue } from 'svelte/elements';
-  import { cn } from '$lib/utils/tailwind';
-
-  import type { ContactInfoSingle } from '$lib/types';
 
   import Typography from '$lib/components/custom-ui/typography';
+  import type { ContactInfoSingle } from '$lib/types';
+  import { cn } from '$lib/utils/tailwind';
 
   type LinkProps = ContactInfoSingle & { class?: ClassValue };
 

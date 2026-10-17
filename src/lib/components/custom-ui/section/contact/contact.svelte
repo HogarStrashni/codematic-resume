@@ -1,13 +1,12 @@
 <script lang="ts">
   import type { ClassValue } from 'svelte/elements';
-  import { cn } from '$lib/utils/tailwind';
 
-  import Typography from '$lib/components/custom-ui/typography';
-  import { Link } from '$lib/components/custom-ui/section/contact';
-  import Image from '$lib/components/custom-ui/image';
   import avatarImage from '$lib/assets/avatar-image.jpg?enhanced';
-
+  import Image from '$lib/components/custom-ui/image';
+  import { Link } from '$lib/components/custom-ui/section/contact';
+  import Typography from '$lib/components/custom-ui/typography';
   import type { BasicInfo, ContactInfo } from '$lib/types';
+  import { cn } from '$lib/utils/tailwind';
 
   type ContactProps = {
     basicInfo: BasicInfo;

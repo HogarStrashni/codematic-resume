@@ -1,10 +1,9 @@
 <script lang="ts">
   import type { ClassValue } from 'svelte/elements';
-  import { cn } from '$lib/utils/tailwind';
 
   import { ExperienceArticle } from '$lib/components/custom-ui/section/experience';
-
   import type { ExperienceData, Language } from '$lib/types';
+  import { cn } from '$lib/utils/tailwind';
 
   type ExperienceProps = {
     experienceData: ExperienceData;

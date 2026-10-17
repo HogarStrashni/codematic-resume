@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { ClassValue } from 'svelte/elements';
-  import { getDuration, formatDate } from '$lib/utils/date-formatter';
-  import Typography from '$lib/components/custom-ui/typography';
 
+  import Typography from '$lib/components/custom-ui/typography';
   import type { Language } from '$lib/types';
+  import { formatDate,getDuration } from '$lib/utils/date-formatter';
 
   type ExperienceArticleProps = {
     startDate: string;

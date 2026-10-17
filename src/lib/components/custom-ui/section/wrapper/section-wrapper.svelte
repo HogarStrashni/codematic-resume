@@ -1,11 +1,10 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import type { ClassValue } from 'svelte/elements';
-  import { cn } from '$lib/utils/tailwind';
 
   import Typography from '$lib/components/custom-ui/typography';
-
   import type { SectionTitle } from '$lib/types';
+  import { cn } from '$lib/utils/tailwind';
 
   type SectionWrapperProps = {
     children: Snippet;

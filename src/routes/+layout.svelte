@@ -1,5 +1,6 @@
 <script lang="ts">
   import '../app.css';
+
   import { page } from '$app/state';
   import { basicInfo } from '$lib/data/en';
 

@@ -1,9 +1,10 @@
 <script lang="ts">
+  import type { ClassValue } from 'clsx';
   import type { Snippet } from 'svelte';
 
   import { cn } from '$lib/utils/tailwind';
-  import type { ClassValue } from 'clsx';
-  import { textVariants, type TextVariantProps } from './text-variants';
+
+  import { type TextVariantProps,textVariants } from './text-variants';
 
   type HTMLTextElement = 'h1' | 'h2' | 'h3' | 'p' | 'span';
 

@@ -1,11 +1,12 @@
 <script lang="ts">
   import type { ClassValue } from 'svelte/elements';
-  import Typography from '$lib/components/custom-ui/typography';
+
+  import transparentLogo from '$lib/assets/codematic-logo.png?enhanced';
   import Image from '$lib/components/custom-ui/image';
+  import Typography from '$lib/components/custom-ui/typography';
   import { cn } from '$lib/utils/tailwind';
 
   import { navigationLinks } from './navigation';
-  import transparentLogo from '$lib/assets/codematic-logo.png?enhanced';
 
   type MainHeaderProps = {
     class?: ClassValue;

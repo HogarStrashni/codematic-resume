@@ -1,8 +1,8 @@
 <script lang="ts">
+  import type { ClassValue, HTMLTextareaAttributes } from 'svelte/elements';
+
   import Typography from '$lib/components/custom-ui/typography';
   import { cn } from '$lib/utils/tailwind';
-
-  import type { ClassValue, HTMLTextareaAttributes } from 'svelte/elements';
 
   type TextareaProps = HTMLTextareaAttributes & {
     label: string;

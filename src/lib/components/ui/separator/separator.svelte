@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { ClassValue } from 'svelte/elements';
+
   import { cn } from '$lib/utils/tailwind';
 
   type SeparatorProps = {

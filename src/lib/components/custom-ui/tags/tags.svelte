@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { ClassValue } from 'svelte/elements';
-  import { cn } from '$lib/utils/tailwind';
 
   import Typography, { type TextVariantProps } from '$lib/components/custom-ui/typography';
+  import { cn } from '$lib/utils/tailwind';
 
   type TagsProps = {
     data: Array<string>;

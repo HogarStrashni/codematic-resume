@@ -1,14 +1,13 @@
 <script lang="ts">
   import { tick } from 'svelte';
   import type { ClassValue } from 'svelte/elements';
+
   import { dev } from '$app/environment';
-  import { cn } from '$lib/utils/tailwind';
-  import { toPdf } from '$lib/state/to-pdf.svelte';
-
   import Typography from '$lib/components/custom-ui/typography';
-  import { Printer, Download, FileText } from '$lib/icons';
-
+  import { Download, FileText,Printer } from '$lib/icons';
+  import { toPdf } from '$lib/state/to-pdf.svelte';
   import type { DownloadFileMetadata } from '$lib/types';
+  import { cn } from '$lib/utils/tailwind';
 
   type HeaderProps = {
     downloadFileMetadata: DownloadFileMetadata;

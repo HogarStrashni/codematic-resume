@@ -1,4 +1,4 @@
+import { type TextVariantProps,textVariants } from './text-variants';
 import Typography from './typography.svelte';
-import { textVariants, type TextVariantProps } from './text-variants';
 
-export { Typography as default, textVariants, type TextVariantProps };
+export { Typography as default, type TextVariantProps,textVariants };

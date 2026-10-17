@@ -1,11 +1,10 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import avatarImage from '$lib/assets/avatar-image.jpg?enhanced';
+  import Image from '$lib/components/custom-ui/image';
   import Typography from '$lib/components/custom-ui/typography';
   import { Button } from '$lib/components/ui/button';
   import { basicInfo } from '$lib/data/en';
-
-  import Image from '$lib/components/custom-ui/image';
-  import avatarImage from '$lib/assets/avatar-image.jpg?enhanced';
 </script>
 
 <section class="-mt-16 flex min-h-svh flex-col pt-16 sm:-mt-20 sm:pt-20 lg:min-h-dvh">

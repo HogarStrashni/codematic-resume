@@ -1,13 +1,14 @@
 <script lang="ts">
   import type { ClassValue } from 'svelte/elements';
+
   import Typography from '$lib/components/custom-ui/typography';
+  import { Button } from '$lib/components/ui/button';
   import { Input } from '$lib/components/ui/input';
   import { Textarea } from '$lib/components/ui/textarea';
-  import { Button } from '$lib/components/ui/button';
-  import { cn } from '$lib/utils/tailwind';
-  import type { FormErrors } from '$lib/types';
   import { FORM_STATUS_MESSAGES } from '$lib/constants';
+  import type { FormErrors } from '$lib/types';
   import { getContactFormData, validateContactForm } from '$lib/utils/contact-form';
+  import { cn } from '$lib/utils/tailwind';
 
   type ContactFormProps = {
     class?: ClassValue;
@@ -49,8 +50,9 @@
       }
 
       if (res.status === 422) {
-        const data: { errors: FormErrors } = await res.json();
+        const data: { message: string; errors: FormErrors } = await res.json();
         fieldErrors = data.errors;
+        fieldErrors.root = data.message;
         return;
       }
 

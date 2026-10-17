@@ -1,6 +1,7 @@
+import { json } from '@sveltejs/kit';
+
 import { FORM_STATUS_MESSAGES } from '$lib/constants';
 import { getContactFormData, validateContactForm } from '$lib/utils/contact-form';
-import { json } from '@sveltejs/kit';
 
 export const POST = async ({ request }) => {
   let formData: FormData;
@@ -30,7 +31,7 @@ export const POST = async ({ request }) => {
 
   if (Object.keys(errors).length > 0) {
     return json(
-      { errors },
+      { message: FORM_STATUS_MESSAGES.missingFieldsError, errors },
       {
         status: 422
       }

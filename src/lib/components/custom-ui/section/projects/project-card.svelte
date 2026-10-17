@@ -1,12 +1,11 @@
 <script lang="ts">
   import type { ClassValue } from 'svelte/elements';
-  import { cn } from '$lib/utils/tailwind';
-  import { toPdf } from '$lib/state/to-pdf.svelte';
 
-  import Typography from '$lib/components/custom-ui/typography';
   import { Actions } from '$lib/components/custom-ui/section/projects';
-
+  import Typography from '$lib/components/custom-ui/typography';
+  import { toPdf } from '$lib/state/to-pdf.svelte';
   import type { ProjectDataSingle } from '$lib/types';
+  import { cn } from '$lib/utils/tailwind';
 
   type ProjectCardProps = {
     data: ProjectDataSingle;

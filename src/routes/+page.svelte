@@ -7,7 +7,7 @@
   import Summary from '$lib/components/custom-ui/section/summary';
   import SectionWrapper from '$lib/components/custom-ui/section/wrapper';
   import { Separator } from '$lib/components/ui/separator';
-  import { sectionTitle, summaryData, skillsData, projectsData } from '$lib/data/en';
+  import { projectsData, sectionTitle, skillsData, summaryData } from '$lib/data/en';
 </script>
 
 <div class="bg-black text-gray-400" aria-label="Website Content">

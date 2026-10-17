@@ -1,15 +1,13 @@
 import {
-  downloadFileMetadata,
-  sectionTitle,
   basicInfo,
   contactInfo,
-  summaryData,
-  experienceData,
+  downloadFileMetadata,
   educationData,
+  experienceData,
+  projectsData,
+  sectionTitle,
   skillsData,
-  projectsData
-} from '$lib/data/en';
-
+  summaryData} from '$lib/data/en';
 import type { licenceData } from '$lib/data/sr';
 
 export type DownloadFileMetadata = typeof downloadFileMetadata;

@@ -1,10 +1,9 @@
 <script lang="ts">
   import type { ClassValue } from 'svelte/elements';
-  import { cn } from '$lib/utils/tailwind';
 
   import { ProjectCard } from '$lib/components/custom-ui/section/projects-main-page';
-
   import type { ProjectData } from '$lib/types';
+  import { cn } from '$lib/utils/tailwind';
 
   type ProjectsProps = {
     projectsData: ProjectData;
