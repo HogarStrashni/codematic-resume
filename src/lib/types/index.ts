@@ -7,7 +7,8 @@ import {
   projectsData,
   sectionTitle,
   skillsData,
-  summaryData} from '$lib/data/en';
+  summaryData
+} from '$lib/data/en';
 import type { licenceData } from '$lib/data/sr';
 
 export type DownloadFileMetadata = typeof downloadFileMetadata;
@@ -35,9 +36,16 @@ export type ContactFormPayload = {
 };
 
 export type FormErrors = Partial<{
-  firstName: string;
-  lastName: string;
-  email: string;
-  message: string;
-  root: string;
+  firstName: string | undefined;
+  lastName: string | undefined;
+  email: string | undefined;
+  message: string | undefined;
 }>;
+
+export type ToastType = 'success' | 'error' | 'warning' | 'info';
+
+export type Toast = {
+  id: string;
+  message: string;
+  type: ToastType;
+};

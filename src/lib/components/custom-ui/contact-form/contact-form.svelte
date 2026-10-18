@@ -5,6 +5,7 @@
   import { Button } from '$lib/components/ui/button';
   import { Input } from '$lib/components/ui/input';
   import { Textarea } from '$lib/components/ui/textarea';
+  import { toast } from '$lib/components/ui/toast';
   import { FORM_STATUS_MESSAGES } from '$lib/constants';
   import type { FormErrors } from '$lib/types';
   import { getContactFormData, validateContactForm } from '$lib/utils/contact-form';
@@ -14,17 +15,42 @@
     class?: ClassValue;
   };
 
+  type FormEvent = Event & {
+    currentTarget: EventTarget & HTMLFormElement;
+  };
+
   let { class: className }: ContactFormProps = $props();
 
   let fieldErrors = $state<FormErrors>({});
-  let isSubmitting = $state(false);
+  const hasErrors = $derived(Object.values(fieldErrors).some((i) => i?.length > 0));
 
-  const handleSubmit = async (
-    e: SubmitEvent & {
-      currentTarget: EventTarget & HTMLFormElement;
+  let isSubmitting = $state(false);
+  let hasSubmitted = $state(false);
+
+  const handleInput = (e: FormEvent) => {
+    if (!hasSubmitted) return;
+
+    const target = e.target;
+
+    if (!(target instanceof HTMLInputElement) && !(target instanceof HTMLTextAreaElement)) {
+      return;
     }
-  ) => {
+
+    const fieldName = target.name as keyof FormErrors;
+    if (!(fieldName in fieldErrors)) return;
+
+    const values = getContactFormData(new FormData(target.form!));
+    const errors = validateContactForm(values);
+
+    fieldErrors = {
+      ...fieldErrors,
+      [fieldName]: errors[fieldName]
+    };
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    hasSubmitted = true;
     const form = e.currentTarget;
     const formData = new FormData(form);
 
@@ -33,6 +59,7 @@
 
     if (Object.keys(errors).length > 0) {
       fieldErrors = errors;
+      toast.warning(FORM_STATUS_MESSAGES.missingFieldsError);
       return;
     }
 
@@ -44,21 +71,22 @@
       });
 
       if (res.ok) {
+        const data: { message: string } = await res.json();
         form.reset();
         fieldErrors = {};
+        toast.success(data.message);
         return;
       }
 
       if (res.status === 422) {
         const data: { message: string; errors: FormErrors } = await res.json();
         fieldErrors = data.errors;
-        fieldErrors.root = data.message;
+        toast.warning(data.message);
         return;
       }
-
-      fieldErrors.root = await res.json();
     } catch (err) {
-      console.log(FORM_STATUS_MESSAGES.unknownError, err);
+      console.log(err);
+      toast.error(FORM_STATUS_MESSAGES.unknownError);
     } finally {
       isSubmitting = false;
     }
@@ -69,6 +97,7 @@
   method="POST"
   action="/api/contact"
   onsubmit={handleSubmit}
+  oninput={handleInput}
   class={cn('mx-auto flex flex-col gap-4 sm:max-w-128', className)}
 >
   <Input label="First name" name="firstName" autocomplete="off" error={fieldErrors.firstName} />
@@ -79,7 +108,7 @@
   </div>
   <Textarea label="Message" name="message" rows={6} error={fieldErrors.message} />
 
-  <Button type="submit" disabled={isSubmitting}>
+  <Button type="submit" disabled={isSubmitting || hasErrors}>
     <Typography tag="span">Send Message</Typography>
   </Button>
 </form>

@@ -2,6 +2,7 @@
   import '../app.css';
 
   import { page } from '$app/state';
+  import Toaster from '$lib/components/ui/toast';
   import { basicInfo } from '$lib/data/en';
 
   let { children } = $props();
@@ -22,3 +23,5 @@
 </svelte:head>
 
 {@render children()}
+
+<Toaster />
