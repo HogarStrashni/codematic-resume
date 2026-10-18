@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { goto } from '$app/navigation';
   import avatarImage from '$lib/assets/avatar-image.jpg?enhanced';
   import Image from '$lib/components/custom-ui/image';
   import Typography from '$lib/components/custom-ui/typography';
@@ -18,7 +17,7 @@
     <Typography tag="span" class="mt-1 text-gray-600">{basicInfo.profession}</Typography>
     <Typography tag="span" class="text-gray-600">{basicInfo.residence}</Typography>
 
-    <Button class="mt-4" onclick={() => goto('#contact-me')}>
+    <Button href="#contact-me" class="mt-4">
       <Typography tag="span">Contact Me</Typography>
     </Button>
   </div>

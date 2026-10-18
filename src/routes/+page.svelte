@@ -8,6 +8,12 @@
   import SectionWrapper from '$lib/components/custom-ui/section/wrapper';
   import { Separator } from '$lib/components/ui/separator';
   import { projectsData, sectionTitle, skillsData, summaryData } from '$lib/data/en';
+
+  $effect(() => {
+    document.body.style.backgroundColor = 'black';
+
+    return () => (document.body.style.backgroundColor = '');
+  });
 </script>
 
 <div class="bg-black text-gray-400" aria-label="Website Content">

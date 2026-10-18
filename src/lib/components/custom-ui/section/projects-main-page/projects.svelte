@@ -3,7 +3,7 @@
 
   import { ProjectCard } from '$lib/components/custom-ui/section/projects-main-page';
   import type { ProjectData } from '$lib/types';
-  import { cn } from '$lib/utils/tailwind';
+  import { cn } from '$lib/utils';
 
   type ProjectsProps = {
     projectsData: ProjectData;

@@ -3,7 +3,7 @@
 
   import { ExperienceArticle } from '$lib/components/custom-ui/section/experience';
   import type { ExperienceData, Language } from '$lib/types';
-  import { cn } from '$lib/utils/tailwind';
+  import { cn } from '$lib/utils';
 
   type ExperienceProps = {
     experienceData: ExperienceData;

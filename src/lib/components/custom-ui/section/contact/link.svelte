@@ -3,7 +3,7 @@
 
   import Typography from '$lib/components/custom-ui/typography';
   import type { ContactInfoSingle } from '$lib/types';
-  import { cn } from '$lib/utils/tailwind';
+  import { cn } from '$lib/utils';
 
   type LinkProps = ContactInfoSingle & { class?: ClassValue };
 

@@ -1,7 +1,7 @@
 import { json } from '@sveltejs/kit';
 
 import { FORM_STATUS_MESSAGES } from '$lib/constants';
-import { getContactFormData, validateContactForm } from '$lib/utils/contact-form';
+import { getContactFormData, validateContactForm } from '$lib/utils';
 
 export const POST = async ({ request }) => {
   let formData: FormData;

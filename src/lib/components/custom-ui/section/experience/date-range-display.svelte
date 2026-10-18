@@ -3,7 +3,7 @@
 
   import Typography from '$lib/components/custom-ui/typography';
   import type { Language } from '$lib/types';
-  import { formatDate,getDuration } from '$lib/utils/date-formatter';
+  import { formatDate, getDuration } from '$lib/utils';
 
   type ExperienceArticleProps = {
     startDate: string;

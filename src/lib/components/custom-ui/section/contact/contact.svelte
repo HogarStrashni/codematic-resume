@@ -6,7 +6,7 @@
   import { Link } from '$lib/components/custom-ui/section/contact';
   import Typography from '$lib/components/custom-ui/typography';
   import type { BasicInfo, ContactInfo } from '$lib/types';
-  import { cn } from '$lib/utils/tailwind';
+  import { cn } from '$lib/utils';
 
   type ContactProps = {
     basicInfo: BasicInfo;

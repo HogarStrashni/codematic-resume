@@ -4,10 +4,10 @@
 
   import { dev } from '$app/environment';
   import Typography from '$lib/components/custom-ui/typography';
-  import { Download, FileText,Printer } from '$lib/icons';
+  import { Download, FileText, Printer } from '$lib/icons';
   import { toPdf } from '$lib/state/to-pdf.svelte';
   import type { DownloadFileMetadata } from '$lib/types';
-  import { cn } from '$lib/utils/tailwind';
+  import { cn } from '$lib/utils';
 
   type HeaderProps = {
     downloadFileMetadata: DownloadFileMetadata;

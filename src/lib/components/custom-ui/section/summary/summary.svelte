@@ -3,7 +3,7 @@
 
   import Typography from '$lib/components/custom-ui/typography';
   import type { SummaryData } from '$lib/types';
-  import { cn } from '$lib/utils/tailwind';
+  import { cn } from '$lib/utils';
 
   type SummaryProps = {
     summaryData: SummaryData;

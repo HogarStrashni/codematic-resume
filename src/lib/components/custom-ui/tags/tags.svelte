@@ -2,7 +2,7 @@
   import type { ClassValue } from 'svelte/elements';
 
   import Typography, { type TextVariantProps } from '$lib/components/custom-ui/typography';
-  import { cn } from '$lib/utils/tailwind';
+  import { cn } from '$lib/utils';
 
   type TagsProps = {
     data: Array<string>;

@@ -6,7 +6,7 @@
   import Typography from '$lib/components/custom-ui/typography';
   import { toPdf } from '$lib/state/to-pdf.svelte';
   import type { LicenceData } from '$lib/types';
-  import { cn } from '$lib/utils/tailwind';
+  import { cn } from '$lib/utils';
 
   type EducationProps = {
     licenceData: LicenceData;

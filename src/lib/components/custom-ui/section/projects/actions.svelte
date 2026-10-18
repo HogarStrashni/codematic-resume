@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { ClassValue } from 'svelte/elements';
 
-  import { Github,Link } from '$lib/icons';
+  import { Github, Link } from '$lib/icons';
   import { toPdf } from '$lib/state/to-pdf.svelte';
-  import { cn } from '$lib/utils/tailwind';
+  import { cn } from '$lib/utils';
 
   type ActionProps = {
     link: string;

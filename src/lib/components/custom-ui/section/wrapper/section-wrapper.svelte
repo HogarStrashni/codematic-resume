@@ -4,7 +4,7 @@
 
   import Typography from '$lib/components/custom-ui/typography';
   import type { SectionTitle } from '$lib/types';
-  import { cn } from '$lib/utils/tailwind';
+  import { cn } from '$lib/utils';
 
   type SectionWrapperProps = {
     children: Snippet;

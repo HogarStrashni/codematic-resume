@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { ClassValue } from 'svelte/elements';
 
-  import { cn } from '$lib/utils/tailwind';
+  import { cn } from '$lib/utils';
 
   // created by @sveltejs/enhanced-img plugin
   type Picture = {
