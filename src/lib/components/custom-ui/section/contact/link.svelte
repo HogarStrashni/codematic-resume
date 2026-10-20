@@ -10,7 +10,7 @@
   const { text, href, icon: Icon, class: className }: LinkProps = $props();
 </script>
 
-<a {href} target="_blank" class={cn('group/link', className)}>
+<a {href} rel="external" target="_blank" class={cn('group/link', className)}>
   <Icon class="size-5 shrink-0" />
   <Typography
     tag="span"

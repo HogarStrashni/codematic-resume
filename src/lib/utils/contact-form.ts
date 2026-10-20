@@ -2,7 +2,6 @@ import {
   EMAIL_MAX_LENGTH,
   EMAIL_REGEX,
   FORM_FIELD_ERROR_MESSAGES,
-  FORM_STATUS_MESSAGES,
   MESSAGE_MAX_LENGTH,
   MESSAGE_MIN_LENGTH,
   NAME_MAX_LENGTH,
@@ -26,7 +25,7 @@ export const getContactFormData = (formData: FormData) => {
   };
 };
 
-const isContactFormPayload = (input: unknown): input is ContactFormPayload => {
+export const isContactFormPayload = (input: unknown): input is ContactFormPayload => {
   if (typeof input !== 'object' || input === null) {
     return false;
   }
@@ -59,13 +58,8 @@ const validateName = (value: string, field: 'firstName' | 'lastName') => {
   if (!NAME_REGEX.test(value)) return nameError.invalid;
 };
 
-export function validateContactForm(input: unknown): FormErrors {
+export const validateContactForm = (input: ContactFormPayload) => {
   const errors: FormErrors = {};
-
-  if (!isContactFormPayload(input)) {
-    errors.root = FORM_STATUS_MESSAGES.unknownError;
-    return errors;
-  }
 
   const firstName = input.firstName.trim();
   const lastName = input.lastName.trim();
@@ -97,4 +91,4 @@ export function validateContactForm(input: unknown): FormErrors {
   }
 
   return errors;
-}
+};

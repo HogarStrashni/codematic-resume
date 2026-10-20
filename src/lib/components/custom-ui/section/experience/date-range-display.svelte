@@ -14,9 +14,9 @@
 
   const { startDate, endDate, lang, class: className }: ExperienceArticleProps = $props();
 
-  const start = formatDate(startDate);
-  const end = endDate ? formatDate(endDate) : 'Present';
-  const diff = getDuration(startDate, endDate, lang);
+  const start = $derived(formatDate(startDate));
+  const end = $derived(endDate ? formatDate(endDate) : 'Present');
+  const diff = $derived(getDuration(startDate, endDate, lang));
 </script>
 
 <Typography variant="textSmall" class={className}>

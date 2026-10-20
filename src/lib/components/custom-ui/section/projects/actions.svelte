@@ -22,6 +22,7 @@
 >
   <a
     href={link}
+    rel="external"
     aria-label="Link to Web App"
     target="_blank"
     class={cn(
@@ -35,6 +36,7 @@
   {#if github}
     <a
       href={github ?? undefined}
+      rel="external"
       aria-label="Link to Github"
       target="_blank"
       class={cn(

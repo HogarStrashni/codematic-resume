@@ -16,7 +16,7 @@
 
   const { downloadFileMetadata, class: className }: HeaderProps = $props();
 
-  const { href, download } = downloadFileMetadata;
+  const { href, download } = $derived(downloadFileMetadata);
 
   const printToPdfFile = async () => {
     if (!dev) {
@@ -59,6 +59,7 @@
   <a
     {href}
     {download}
+    rel="external"
     class="flex items-center gap-1 rounded border bg-white px-4 py-2 shadow-sm duration-200 active:shadow-none lg:flex-col lg:gap-0 lg:hover:bg-gray-50"
   >
     <Download class="size-4" />

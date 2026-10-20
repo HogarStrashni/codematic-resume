@@ -14,8 +14,9 @@
 
   const {
     title,
-    description: { heading, text }
-  } = data;
+    description: { heading, text },
+    link
+  } = $derived(data);
 </script>
 
 <div class={cn('space-y-4 rounded-xl border border-gray-800 p-4 sm:p-8', className)}>
@@ -26,7 +27,8 @@
   <Typography variant="textSmall">{text}</Typography>
 
   <a
-    href={data.link}
+    href={link}
+    rel="external"
     aria-label="Link to Web App"
     target="_blank"
     class="flex max-w-fit items-center gap-2 text-blue-800"

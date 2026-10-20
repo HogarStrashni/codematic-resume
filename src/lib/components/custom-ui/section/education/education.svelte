@@ -15,7 +15,7 @@
 
   const { educationData, class: className }: EducationProps = $props();
 
-  const { faculty, university, degree, grade } = educationData;
+  const { faculty, university, degree, grade } = $derived(educationData);
 </script>
 
 <div class="flex gap-2">

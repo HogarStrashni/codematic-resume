@@ -3,7 +3,7 @@ import GeoputLogo from '$lib/assets/geoput-logo.png?enhanced';
 import HtecLogo from '$lib/assets/htecgroup-logo.jpg?enhanced';
 import RoutingLogo from '$lib/assets/routing-logo.png?enhanced';
 import SitecLogo from '$lib/assets/sitec-llc-logo.jpg?enhanced';
-import { Github,Linkedin, MailOpen, Phone } from '$lib/icons';
+import { Github, Linkedin, MailOpen, Phone } from '$lib/icons';
 
 // General -> Download File Metadata
 export const downloadFileMetadata = {

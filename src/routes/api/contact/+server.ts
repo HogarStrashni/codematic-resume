@@ -1,7 +1,7 @@
 import { json } from '@sveltejs/kit';
 
 import { FORM_STATUS_MESSAGES } from '$lib/constants';
-import { getContactFormData, validateContactForm } from '$lib/utils';
+import { getContactFormData, isContactFormPayload, validateContactForm } from '$lib/utils';
 
 export const POST = async ({ request }) => {
   let formData: FormData;
@@ -16,7 +16,17 @@ export const POST = async ({ request }) => {
       }
     );
   }
+
   const values = getContactFormData(formData);
+
+  if (!isContactFormPayload(values)) {
+    return json(
+      { message: FORM_STATUS_MESSAGES.invalidRequest },
+      {
+        status: 400
+      }
+    );
+  }
 
   if (values.confirmEmail.trim() !== '') {
     return json(

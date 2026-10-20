@@ -17,7 +17,8 @@
 
   const { articleData, lang, class: className }: ExperienceArticleProps = $props();
 
-  const { title, company, logo, startDate, endDate, description, technologies } = articleData;
+  const { title, company, logo, startDate, endDate, description, technologies } =
+    $derived(articleData);
 </script>
 
 <article class={cn('space-y-2', className)}>

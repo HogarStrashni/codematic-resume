@@ -16,7 +16,7 @@
 
   const { basicInfo, contactInfo, class: className }: ContactProps = $props();
 
-  const { profession, residence } = basicInfo;
+  const { profession, residence } = $derived(basicInfo);
 </script>
 
 <section class={cn('space-y-2', className)}>

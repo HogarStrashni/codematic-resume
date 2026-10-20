@@ -83,7 +83,7 @@ declare abstract class WorkerGlobalScope extends EventTarget<WorkerGlobalScopeEv
 }
 /* [MDN Reference](https://developer.mozilla.org/docs/Web/API/console) */
 interface Console {
-  'assert'(condition?: boolean, ...data: any[]): void;
+  assert(condition?: boolean, ...data: any[]): void;
   /* [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/clear_static) */
   clear(): void;
   /* [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/count_static) */
@@ -518,15 +518,7 @@ interface DurableObjectNamespaceNewUniqueIdOptions {
   jurisdiction?: DurableObjectJurisdiction;
 }
 type DurableObjectLocationHint =
-  | 'wnam'
-  | 'enam'
-  | 'sam'
-  | 'weur'
-  | 'eeur'
-  | 'apac'
-  | 'oc'
-  | 'afr'
-  | 'me';
+  'wnam' | 'enam' | 'sam' | 'weur' | 'eeur' | 'apac' | 'oc' | 'afr' | 'me';
 interface DurableObjectNamespaceGetDurableObjectOptions {
   locationHint?: DurableObjectLocationHint;
 }
@@ -748,8 +740,7 @@ interface EventListenerObject<EventType extends Event = Event> {
   handleEvent(event: EventType): void;
 }
 type EventListenerOrEventListenerObject<EventType extends Event = Event> =
-  | EventListener<EventType>
-  | EventListenerObject<EventType>;
+  EventListener<EventType> | EventListenerObject<EventType>;
 /**
  * EventTarget is a DOM interface implemented by objects that can receive events and may have listeners for them.
  *
@@ -1550,8 +1541,7 @@ interface ResponseInit {
   encodeBody?: 'automatic' | 'manual';
 }
 type RequestInfo<CfHostMetadata = unknown, Cf = CfProperties<CfHostMetadata>> =
-  | Request<CfHostMetadata, Cf>
-  | string;
+  Request<CfHostMetadata, Cf> | string;
 /**
  * This Fetch API interface represents a resource request.
  *
@@ -3586,10 +3576,7 @@ interface BGEM3InputEmbedding1 {
   truncate_inputs?: boolean;
 }
 type Ai_Cf_Baai_Bge_M3_Output =
-  | BGEM3OuputQuery
-  | BGEM3OutputEmbeddingForContexts
-  | BGEM3OuputEmbedding
-  | AsyncResponse;
+  BGEM3OuputQuery | BGEM3OutputEmbeddingForContexts | BGEM3OuputEmbedding | AsyncResponse;
 interface BGEM3OuputQuery {
   response?: {
     /**
@@ -4293,8 +4280,7 @@ declare abstract class Base_Ai_Cf_Baai_Bge_Reranker_Base {
   postProcessedOutputs: Ai_Cf_Baai_Bge_Reranker_Base_Output;
 }
 type Ai_Cf_Qwen_Qwen2_5_Coder_32B_Instruct_Input =
-  | Qwen2_5_Coder_32B_Instruct_Prompt
-  | Qwen2_5_Coder_32B_Instruct_Messages;
+  Qwen2_5_Coder_32B_Instruct_Prompt | Qwen2_5_Coder_32B_Instruct_Messages;
 interface Qwen2_5_Coder_32B_Instruct_Prompt {
   /**
    * The input text prompt for the model to generate a response.
@@ -4809,8 +4795,7 @@ declare abstract class Base_Ai_Cf_Qwen_Qwq_32B {
   postProcessedOutputs: Ai_Cf_Qwen_Qwq_32B_Output;
 }
 type Ai_Cf_Mistralai_Mistral_Small_3_1_24B_Instruct_Input =
-  | Mistral_Small_3_1_24B_Instruct_Prompt
-  | Mistral_Small_3_1_24B_Instruct_Messages;
+  Mistral_Small_3_1_24B_Instruct_Prompt | Mistral_Small_3_1_24B_Instruct_Messages;
 interface Mistral_Small_3_1_24B_Instruct_Prompt {
   /**
    * The input text prompt for the model to generate a response.
@@ -5083,8 +5068,7 @@ declare abstract class Base_Ai_Cf_Mistralai_Mistral_Small_3_1_24B_Instruct {
   postProcessedOutputs: Ai_Cf_Mistralai_Mistral_Small_3_1_24B_Instruct_Output;
 }
 type Ai_Cf_Google_Gemma_3_12B_It_Input =
-  | Google_Gemma_3_12B_It_Prompt
-  | Google_Gemma_3_12B_It_Messages;
+  Google_Gemma_3_12B_It_Prompt | Google_Gemma_3_12B_It_Messages;
 interface Google_Gemma_3_12B_It_Prompt {
   /**
    * The input text prompt for the model to generate a response.
@@ -5353,8 +5337,7 @@ declare abstract class Base_Ai_Cf_Google_Gemma_3_12B_It {
   postProcessedOutputs: Ai_Cf_Google_Gemma_3_12B_It_Output;
 }
 type Ai_Cf_Meta_Llama_4_Scout_17B_16E_Instruct_Input =
-  | Ai_Cf_Meta_Llama_4_Prompt
-  | Ai_Cf_Meta_Llama_4_Messages;
+  Ai_Cf_Meta_Llama_4_Prompt | Ai_Cf_Meta_Llama_4_Messages;
 interface Ai_Cf_Meta_Llama_4_Prompt {
   /**
    * The input text prompt for the model to generate a response.
@@ -5904,7 +5887,7 @@ type AIGatewayHeaders = {
   [key: string]: string | number | boolean | object;
 };
 type AIGatewayUniversalRequest = {
-  provider: AIGatewayProviders | string;  
+  provider: AIGatewayProviders | string;
   endpoint: string;
   headers: Partial<AIGatewayHeaders>;
   query: unknown;
@@ -5921,7 +5904,7 @@ declare abstract class AiGateway {
       extraHeaders?: object;
     }
   ): Promise<Response>;
-  getUrl(provider?: AIGatewayProviders | string): Promise<string>;  
+  getUrl(provider?: AIGatewayProviders | string): Promise<string>;
 }
 interface AutoRAGInternalError extends Error {}
 interface AutoRAGNotFoundError extends Error {}
@@ -6452,8 +6435,7 @@ interface IncomingRequestCfPropertiesBotManagement {
    */
   clientTrustScore: number;
 }
-interface IncomingRequestCfPropertiesBotManagementEnterprise
-  extends IncomingRequestCfPropertiesBotManagement {
+interface IncomingRequestCfPropertiesBotManagementEnterprise extends IncomingRequestCfPropertiesBotManagement {
   /**
    * Results of Cloudflare's Bot Management analysis
    */
@@ -6490,8 +6472,7 @@ interface IncomingRequestCfPropertiesCloudflareAccessOrApiShield {
    * the object is populated (i.e. the above conditions were met).
    */
   tlsClientAuth:
-    | IncomingRequestCfPropertiesTLSClientAuth
-    | IncomingRequestCfPropertiesTLSClientAuthPlaceholder;
+    IncomingRequestCfPropertiesTLSClientAuth | IncomingRequestCfPropertiesTLSClientAuthPlaceholder;
 }
 /**
  * Metadata about the request's TLS handshake
@@ -6994,8 +6975,7 @@ declare type Iso3166Alpha2Code =
 /** The 2-letter continent codes Cloudflare uses */
 declare type ContinentCode = 'AF' | 'AN' | 'AS' | 'EU' | 'NA' | 'OC' | 'SA';
 type CfProperties<HostMetadata = unknown> =
-  | IncomingRequestCfProperties<HostMetadata>
-  | RequestInitCfProperties;
+  IncomingRequestCfProperties<HostMetadata> | RequestInitCfProperties;
 interface D1Meta {
   duration: number;
   size_after: number;
@@ -7513,9 +7493,7 @@ declare namespace Rpc {
     [__WORKFLOW_ENTRYPOINT_BRAND]: never;
   }
   export type EntrypointBranded =
-    | WorkerEntrypointBranded
-    | DurableObjectBranded
-    | WorkflowEntrypointBranded;
+    WorkerEntrypointBranded | DurableObjectBranded | WorkflowEntrypointBranded;
   // Types that can be used through `Stub`s
   export type Stubable = RpcTargetBranded | ((...args: any[]) => any);
   // Types that can be passed over RPC
@@ -7676,13 +7654,7 @@ declare module 'cloudflare:workers' {
     webSocketError?(ws: WebSocket, error: unknown): void | Promise<void>;
   }
   export type WorkflowDurationLabel =
-    | 'second'
-    | 'minute'
-    | 'hour'
-    | 'day'
-    | 'week'
-    | 'month'
-    | 'year';
+    'second' | 'minute' | 'hour' | 'day' | 'week' | 'month' | 'year';
   export type WorkflowSleepDuration = `${number} ${WorkflowDurationLabel}${'s' | ''}` | number;
   export type WorkflowDelayDuration = WorkflowSleepDuration;
   export type WorkflowTimeoutDuration = WorkflowSleepDuration;
@@ -7726,7 +7698,8 @@ declare module 'cloudflare:workers' {
   export abstract class WorkflowEntrypoint<
     Env = unknown,
     T extends Rpc.Serializable<T> | unknown = unknown
-  > implements Rpc.WorkflowEntrypointBranded
+  >
+    implements Rpc.WorkflowEntrypointBranded
   {
     [Rpc.__WORKFLOW_ENTRYPOINT_BRAND]: never;
     protected ctx: ExecutionContext;
@@ -7960,8 +7933,7 @@ type VectorizeVectorMetadataValue = string | number | boolean | string[];
  * Additional information to associate with a vector.
  */
 type VectorizeVectorMetadata =
-  | VectorizeVectorMetadataValue
-  | Record<string, VectorizeVectorMetadataValue>;
+  VectorizeVectorMetadataValue | Record<string, VectorizeVectorMetadataValue>;
 type VectorFloatArray = Float32Array | Float64Array;
 interface VectorizeError {
   code?: number;

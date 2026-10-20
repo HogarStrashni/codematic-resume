@@ -11,7 +11,7 @@
   };
   let { data = [], variant = 'textSmall', class: className }: TagsProps = $props();
 
-  const skillsString = data.join(' • ');
+  const skillsString = $derived(data.join(' • '));
 </script>
 
 <Typography tag="span" {variant} class={cn('block italic', className)}>

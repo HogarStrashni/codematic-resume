@@ -16,7 +16,8 @@
     projectsData,
     sectionTitle,
     skillsData,
-    summaryData  } from '$lib/data/en';
+    summaryData
+  } from '$lib/data/en';
 </script>
 
 <Header {downloadFileMetadata} class="-mx-4 px-4 sm:-mx-8 sm:px-8 md:-mx-16 md:px-16" />

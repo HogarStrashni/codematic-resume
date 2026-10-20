@@ -11,4 +11,4 @@ import Printer from './printer.svelte';
 
 type IconProps = { class?: ClassValue };
 
-export { Download, FileText, Github, type IconProps,Link, Linkedin, MailOpen, Phone, Printer };
+export { Download, FileText, Github, type IconProps, Link, Linkedin, MailOpen, Phone, Printer };

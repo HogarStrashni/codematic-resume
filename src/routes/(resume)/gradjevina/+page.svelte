@@ -14,7 +14,8 @@
     experienceData,
     licenceData,
     sectionTitle,
-    summaryData  } from '$lib/data/sr';
+    summaryData
+  } from '$lib/data/sr';
 </script>
 
 <Header {downloadFileMetadata} class="-mx-4 px-4 sm:-mx-8 sm:px-8 md:-mx-16 md:px-16" />
