@@ -1,9 +1,10 @@
 import { json } from '@sveltejs/kit';
 
 import { FORM_STATUS_MESSAGES } from '$lib/constants';
+import { reserveEmailSlot } from '$lib/server/utils';
 import { getContactFormData, isContactFormPayload, validateContactForm } from '$lib/utils';
 
-export const POST = async ({ request }) => {
+export const POST = async ({ request, platform }) => {
   let formData: FormData;
 
   try {
@@ -48,7 +49,33 @@ export const POST = async ({ request }) => {
     );
   }
 
-  // TODO: Send the email using your `resend`.
+  const db = platform?.env.DB;
+
+  if (!db) {
+    return json(
+      { message: FORM_STATUS_MESSAGES.unknownError },
+      {
+        status: 500
+      }
+    );
+  }
+
+  const { limitReached, shouldNotify } = await reserveEmailSlot(db);
+
+  if (limitReached) {
+    if (shouldNotify) {
+      // TODO: Send the daily-limit notification through Resend.
+    }
+
+    return json(
+      { error: FORM_STATUS_MESSAGES.dailyLimit },
+      {
+        status: 429
+      }
+    );
+  }
+
+  // TODO: Send the normal contact email through Resend.
 
   return json(
     { message: FORM_STATUS_MESSAGES.success },
