@@ -1,6 +1,6 @@
 import type { D1Database } from '@cloudflare/workers-types';
 
-const DAILY_LIMIT = 30;
+const DAILY_LIMIT = 40;
 
 export const reserveEmailSlot = async (db: D1Database) => {
   const day = new Date().toISOString().slice(0, 10);

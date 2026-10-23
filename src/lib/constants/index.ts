@@ -42,9 +42,9 @@ export const FORM_STATUS_MESSAGES = {
   unknownError: 'Something went wrong. Please try again.',
   missingFieldsError: 'Please correct the highlighted fields.',
   invalidRequest: 'Invalid request',
-  dailyLimit: 'Daily contact form limit reached. Try again tomorrow.'
+  dailyLimit: 'Daily contact form limit reached. Try again tomorrow.',
+  serverError: "We couldn't send your message right now. Please try again later."
   // rateLimited: 'Too many attempts. Please wait a moment before trying again.'
-  // serverError: "We couldn't send your message right now. Please try again later.",
   // captchaFailed: 'Verification failed. Please try again.',
   // captchaExpired: 'Verification expired. Please try again.',
 } as const;

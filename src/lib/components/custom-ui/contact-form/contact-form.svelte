@@ -58,7 +58,6 @@
 
     if (Object.keys(errors).length > 0) {
       fieldErrors = errors;
-      toast.warning(FORM_STATUS_MESSAGES.missingFieldsError);
       return;
     }
 
@@ -80,11 +79,13 @@
       if (res.status === 422) {
         const data: { message: string; errors: FormErrors } = await res.json();
         fieldErrors = data.errors;
-        toast.warning(data.message);
         return;
       }
+
+      const data: { message: string } = await res.json();
+      toast.error(data.message);
     } catch (err) {
-      console.log(err);
+      console.error('Contact form submission failed:', err);
       toast.error(FORM_STATUS_MESSAGES.unknownError);
     } finally {
       isSubmitting = false;

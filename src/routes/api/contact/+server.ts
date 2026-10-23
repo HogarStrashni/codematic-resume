@@ -1,7 +1,7 @@
 import { json } from '@sveltejs/kit';
 
 import { FORM_STATUS_MESSAGES } from '$lib/constants';
-import { reserveEmailSlot } from '$lib/server/utils';
+import { reserveEmailSlot, sendEmail } from '$lib/server/email-utils';
 import { getContactFormData, isContactFormPayload, validateContactForm } from '$lib/utils';
 
 export const POST = async ({ request, platform }) => {
@@ -9,7 +9,8 @@ export const POST = async ({ request, platform }) => {
 
   try {
     formData = await request.formData();
-  } catch {
+  } catch (err) {
+    console.error(err);
     return json(
       { message: FORM_STATUS_MESSAGES.unknownError },
       {
@@ -49,9 +50,22 @@ export const POST = async ({ request, platform }) => {
     );
   }
 
+  const email = platform?.env.EMAIL;
+
+  if (!email) {
+    console.error('Email provider is not configured');
+    return json(
+      { message: FORM_STATUS_MESSAGES.serverError },
+      {
+        status: 500
+      }
+    );
+  }
+
   const db = platform?.env.DB;
 
   if (!db) {
+    console.error('Database is not configured');
     return json(
       { message: FORM_STATUS_MESSAGES.unknownError },
       {
@@ -60,27 +74,54 @@ export const POST = async ({ request, platform }) => {
     );
   }
 
-  const { limitReached, shouldNotify } = await reserveEmailSlot(db);
+  let limitReached: boolean;
+  let shouldNotify: boolean;
+
+  try {
+    ({ limitReached, shouldNotify } = await reserveEmailSlot(db));
+  } catch (err) {
+    console.error('Failed to reserve email slot:', err);
+    return json(
+      { message: FORM_STATUS_MESSAGES.serverError },
+      {
+        status: 500
+      }
+    );
+  }
 
   if (limitReached) {
     if (shouldNotify) {
-      // TODO: Send the daily-limit notification through Resend.
+      try {
+        await sendEmail(email);
+      } catch (err) {
+        console.error(err);
+      }
     }
 
     return json(
-      { error: FORM_STATUS_MESSAGES.dailyLimit },
+      { message: FORM_STATUS_MESSAGES.dailyLimit },
       {
         status: 429
       }
     );
   }
 
-  // TODO: Send the normal contact email through Resend.
+  try {
+    const { messageId } = await sendEmail(email, values);
 
-  return json(
-    { message: FORM_STATUS_MESSAGES.success },
-    {
-      status: 200
-    }
-  );
+    return json(
+      { message: FORM_STATUS_MESSAGES.success, data: messageId },
+      {
+        status: 200
+      }
+    );
+  } catch (err) {
+    console.error(err);
+    return json(
+      { message: FORM_STATUS_MESSAGES.serverError },
+      {
+        status: 500
+      }
+    );
+  }
 };
