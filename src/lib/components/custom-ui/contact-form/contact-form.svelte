@@ -126,6 +126,14 @@
   </div>
   <TextField as="textarea" label="Message" name="message" rows={6} error={fieldErrors.message} />
 
+  <!-- CF Turnstile Widget -->
+  <div
+    class="cf-turnstile"
+    data-sitekey="0x4AAAAAAFi1hudV27XM9rsR"
+    data-appearance="interaction-only"
+    data-theme="dark"
+  ></div>
+
   <Button type="submit" disabled={isSubmitting || hasErrors}>
     <Typography tag="span">Send Message</Typography>
   </Button>

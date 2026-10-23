@@ -1,7 +1,8 @@
 import { json } from '@sveltejs/kit';
 
+import { TURNSTILE_SECRET_KEY } from '$env/static/private';
 import { FORM_STATUS_MESSAGES } from '$lib/constants';
-import { reserveEmailSlot, sendEmail } from '$lib/server/email-utils';
+import { reserveEmailSlot, sendEmail, validateTurnstileToken } from '$lib/server/email-utils';
 import { getContactFormData, isContactFormPayload, validateContactForm } from '$lib/utils';
 
 export const POST = async ({ request, platform }) => {
@@ -10,7 +11,7 @@ export const POST = async ({ request, platform }) => {
   try {
     formData = await request.formData();
   } catch (err) {
-    console.error(err);
+    console.error('Invalid request', err);
     return json(
       { message: FORM_STATUS_MESSAGES.unknownError },
       {
@@ -22,6 +23,7 @@ export const POST = async ({ request, platform }) => {
   const values = getContactFormData(formData);
 
   if (!isContactFormPayload(values)) {
+    console.error('Invalid Contact form');
     return json(
       { message: FORM_STATUS_MESSAGES.invalidRequest },
       {
@@ -50,10 +52,44 @@ export const POST = async ({ request, platform }) => {
     );
   }
 
+  const token = formData.get('cf-turnstile-response');
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+
+  if (!token || typeof token !== 'string') {
+    console.error('Failed to sent/receive token');
+    return json(
+      { message: FORM_STATUS_MESSAGES.turnstileFailed },
+      {
+        status: 400
+      }
+    );
+  }
+
+  try {
+    const { success } = await validateTurnstileToken(ip, token, TURNSTILE_SECRET_KEY);
+    if (!success) {
+      console.error('Turnstile verification rejected the request');
+      return json(
+        { message: FORM_STATUS_MESSAGES.turnstileFailed },
+        {
+          status: 400
+        }
+      );
+    }
+  } catch (err) {
+    console.error('Turnstile verification request failed', err);
+    return json(
+      { message: FORM_STATUS_MESSAGES.serverError },
+      {
+        status: 500
+      }
+    );
+  }
+
   const email = platform?.env.EMAIL;
 
   if (!email) {
-    console.error('Email provider is not configured');
+    console.error('Email service is not configured');
     return json(
       { message: FORM_STATUS_MESSAGES.serverError },
       {
@@ -80,7 +116,7 @@ export const POST = async ({ request, platform }) => {
   try {
     ({ limitReached, shouldNotify } = await reserveEmailSlot(db));
   } catch (err) {
-    console.error('Failed to reserve email slot:', err);
+    console.error('Failed to reserve email slot', err);
     return json(
       { message: FORM_STATUS_MESSAGES.serverError },
       {
@@ -94,7 +130,7 @@ export const POST = async ({ request, platform }) => {
       try {
         await sendEmail(email);
       } catch (err) {
-        console.error(err);
+        console.error('Failed to send notification email', err);
       }
     }
 
@@ -116,7 +152,7 @@ export const POST = async ({ request, platform }) => {
       }
     );
   } catch (err) {
-    console.error(err);
+    console.error('Failed to send contact email', err);
     return json(
       { message: FORM_STATUS_MESSAGES.serverError },
       {

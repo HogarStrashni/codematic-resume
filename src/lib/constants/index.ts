@@ -43,8 +43,6 @@ export const FORM_STATUS_MESSAGES = {
   missingFieldsError: 'Please correct the highlighted fields.',
   invalidRequest: 'Invalid request',
   dailyLimit: 'Daily contact form limit reached. Try again tomorrow.',
-  serverError: "We couldn't send your message right now. Please try again later."
-  // rateLimited: 'Too many attempts. Please wait a moment before trying again.'
-  // captchaFailed: 'Verification failed. Please try again.',
-  // captchaExpired: 'Verification expired. Please try again.',
+  serverError: "We couldn't send your message right now. Please try again later.",
+  turnstileFailed: 'Please complete the verification and try again.'
 } as const;
