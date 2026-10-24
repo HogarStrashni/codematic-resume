@@ -30,7 +30,7 @@ export const sendEmail = async (mailer: SendEmail, values?: ContactFormPayload) 
   const safeMessage = escapeHtml(message).replace(/\r?\n/g, '<br>');
 
   return await mailer.send({
-    from: 'info@codematic.cc',
+    from: 'no-reply@codematic.cc',
     to: 'djordje@codematic.cc',
     subject: 'Portfolio Contact Form',
     replyTo: email,

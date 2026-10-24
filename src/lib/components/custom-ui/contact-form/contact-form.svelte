@@ -3,6 +3,7 @@
 
   import Typography from '$lib/components/custom-ui/typography';
   import { Button } from '$lib/components/ui/button';
+  import { LoadingSpinner } from '$lib/components/ui/loading-spinner';
   import { TextField } from '$lib/components/ui/text-field';
   import { toast } from '$lib/components/ui/toast';
   import { FORM_STATUS_MESSAGES } from '$lib/constants';
@@ -134,7 +135,11 @@
     data-theme="dark"
   ></div>
 
-  <Button type="submit" disabled={isSubmitting || hasErrors}>
-    <Typography tag="span">Send Message</Typography>
+  <Button type="submit" disabled={isSubmitting || hasErrors} class="w-full max-w-full sm:max-w-36">
+    {#if isSubmitting}
+      <LoadingSpinner />
+    {:else}
+      <Typography tag="span">Send Message</Typography>
+    {/if}
   </Button>
 </form>
