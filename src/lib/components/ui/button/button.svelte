@@ -25,7 +25,7 @@
   class={cn(
     'max-w-fit rounded-lg border px-4 py-2',
     disabled
-      ? 'cursor-not-allowed border-gray-800 text-gray-800'
+      ? 'cursor-not-allowed border-gray-600 text-gray-600'
       : 'cursor-pointer border-blue-800 text-blue-800',
     className
   )}
