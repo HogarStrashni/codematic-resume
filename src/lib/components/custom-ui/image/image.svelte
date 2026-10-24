@@ -1,6 +1,7 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
-  import { cn } from '$lib/utils/tailwind';
+  import type { ClassValue } from 'svelte/elements';
+
+  import { cn } from '$lib/utils';
 
   // created by @sveltejs/enhanced-img plugin
   type Picture = {
@@ -11,12 +12,13 @@
   type ImageProps = {
     src: Picture;
     alt?: string;
-    class?: SvelteHTMLElements['img']['class'];
+    icon?: boolean;
+    class?: ClassValue;
   };
 
-  let { src, alt = '', class: className }: ImageProps = $props();
+  let { src, alt = '', icon = true, class: className }: ImageProps = $props();
 </script>
 
-<div class={cn('size-8 shrink-0 overflow-hidden rounded border', className)}>
+<div class={cn(icon ? 'size-8 shrink-0 overflow-hidden rounded border' : '', className)}>
   <enhanced:img {src} {alt} />
 </div>

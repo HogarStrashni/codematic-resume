@@ -1,7 +1,6 @@
 <script lang="ts">
+  import Tags from '$lib/components/custom-ui/tags';
   import type { SkillsData } from '$lib/types';
-
-  import Tags from '../../tags/tags.svelte';
 
   type SkillsProps = {
     skillsData: SkillsData;

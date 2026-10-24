@@ -1,14 +1,14 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
-  import { cn } from '$lib/utils/tailwind';
-  import { toPdf } from '$lib/state/to-pdf.svelte';
+  import type { ClassValue } from 'svelte/elements';
 
-  import { Link, Github } from '$lib/icons';
+  import { Github, Link } from '$lib/icons';
+  import { toPdf } from '$lib/state/to-pdf.svelte';
+  import { cn } from '$lib/utils';
 
   type ActionProps = {
     link: string;
     github: string | null;
-    class?: SvelteHTMLElements['div']['class'];
+    class?: ClassValue;
   };
   let { link, github, class: className }: ActionProps = $props();
 </script>
@@ -22,6 +22,7 @@
 >
   <a
     href={link}
+    rel="external"
     aria-label="Link to Web App"
     target="_blank"
     class={cn(
@@ -35,6 +36,7 @@
   {#if github}
     <a
       href={github ?? undefined}
+      rel="external"
       aria-label="Link to Github"
       target="_blank"
       class={cn(

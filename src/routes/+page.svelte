@@ -1,47 +1,52 @@
 <script lang="ts">
-  import {
-    downloadFileMetadata,
-    sectionTitle,
-    basicInfo,
-    contactInfo,
-    summaryData,
-    experienceData,
-    educationData,
-    skillsData,
-    projectsData
-  } from '$lib/data/en';
-
-  import Header from '$lib/components/custom-ui/header';
-
-  import SectionWrapper from '$lib/components/custom-ui/section/wrapper';
-  import Contact from '$lib/components/custom-ui/section/contact';
-  import Summary from '$lib/components/custom-ui/section/summary';
-  import Experience from '$lib/components/custom-ui/section/experience';
-  import Education from '$lib/components/custom-ui/section/education/education.svelte';
+  import ContactForm from '$lib/components/custom-ui/contact-form';
+  import MainHeader from '$lib/components/custom-ui/header-main';
+  import HeroSection from '$lib/components/custom-ui/section/hero-section';
+  import Projects from '$lib/components/custom-ui/section/projects-main-page';
   import Skills from '$lib/components/custom-ui/section/skills';
-  import Projects from '$lib/components/custom-ui/section/projects';
+  import Summary from '$lib/components/custom-ui/section/summary';
+  import SectionWrapper from '$lib/components/custom-ui/section/wrapper';
+  import { Separator } from '$lib/components/ui/separator';
+  import { projectsData, sectionTitle, skillsData, summaryData } from '$lib/data/en';
+
+  $effect(() => {
+    document.body.style.backgroundColor = 'black';
+
+    return () => (document.body.style.backgroundColor = '');
+  });
 </script>
 
-<Header {downloadFileMetadata} class="-mx-4 px-4 sm:-mx-8 sm:px-8 md:-mx-16 md:px-16" />
+<div class="bg-black text-gray-400" aria-label="Website Content">
+  <MainHeader class="bg-black" />
 
-<Contact {basicInfo} {contactInfo} />
+  <div class="mx-auto max-w-4xl scroll-smooth px-4 pb-12 sm:px-8 sm:pb-20 md:px-16">
+    <HeroSection />
 
-<SectionWrapper title={sectionTitle.summary} class="mt-12">
-  <Summary {summaryData} />
-</SectionWrapper>
+    <Separator class="sm:my-20" id="about-me" />
 
-<SectionWrapper title={sectionTitle.workExperience} class="mt-12">
-  <Experience {experienceData} lang="en" />
-</SectionWrapper>
+    <SectionWrapper title="About me">
+      <Summary {summaryData} />
+    </SectionWrapper>
+    <SectionWrapper title={sectionTitle.skills}>
+      <Skills {skillsData} />
+    </SectionWrapper>
 
-<SectionWrapper title={sectionTitle.education}>
-  <Education {educationData} />
-</SectionWrapper>
+    <Separator class="sm:my-20" id="projects" />
 
-<SectionWrapper title={sectionTitle.skills}>
-  <Skills {skillsData} />
-</SectionWrapper>
+    <SectionWrapper
+      title={sectionTitle.sideProjects}
+      description="A selection of projects I've built independently, driven by curiosity and a passion for creating things. From experimenting with new technologies to turning ideas into reality, these projects reflect my personal interests and explorations outside of my day-to-day professional work."
+    >
+      <Projects {projectsData} class="mt-8" />
+    </SectionWrapper>
 
-<SectionWrapper title={sectionTitle.sideProjects}>
-  <Projects {projectsData} />
-</SectionWrapper>
+    <Separator class="sm:my-20" id="contact-me" />
+
+    <SectionWrapper
+      title="Contact Me"
+      description="Have something interesting in mind? I'm always open to new opportunities, creative collaborations, and conversations with people who enjoy building great things. Whether it's a project idea or just a quick hello, feel free to get in touch."
+    >
+      <ContactForm class="mt-8" />
+    </SectionWrapper>
+  </div>
+</div>

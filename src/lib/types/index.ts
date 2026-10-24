@@ -1,15 +1,14 @@
 import {
-  downloadFileMetadata,
-  sectionTitle,
   basicInfo,
   contactInfo,
-  summaryData,
-  experienceData,
+  downloadFileMetadata,
   educationData,
+  experienceData,
+  projectsData,
+  sectionTitle,
   skillsData,
-  projectsData
+  summaryData
 } from '$lib/data/en';
-
 import type { licenceData } from '$lib/data/sr';
 
 export type DownloadFileMetadata = typeof downloadFileMetadata;
@@ -27,3 +26,26 @@ export type ProjectDataSingle = (typeof projectsData)[number];
 export type LicenceData = typeof licenceData;
 
 export type Language = 'en' | 'sr';
+
+export type ContactFormPayload = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+  confirmEmail?: string;
+};
+
+export type FormErrors = Partial<{
+  firstName: string | undefined;
+  lastName: string | undefined;
+  email: string | undefined;
+  message: string | undefined;
+}>;
+
+export type ToastType = 'success' | 'error' | 'warning' | 'info';
+
+export type Toast = {
+  id: string;
+  message: string;
+  type: ToastType;
+};

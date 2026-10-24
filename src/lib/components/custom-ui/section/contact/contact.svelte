@@ -1,30 +1,29 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
-  import { cn } from '$lib/utils/tailwind';
+  import type { ClassValue } from 'svelte/elements';
 
-  import Typography from '$lib/components/custom-ui/typography';
-  import { Link } from '$lib/components/custom-ui/section/contact';
-  import Image from '$lib/components/custom-ui/image';
   import avatarImage from '$lib/assets/avatar-image.jpg?enhanced';
-
+  import Image from '$lib/components/custom-ui/image';
+  import { Link } from '$lib/components/custom-ui/section/contact';
+  import Typography from '$lib/components/custom-ui/typography';
   import type { BasicInfo, ContactInfo } from '$lib/types';
+  import { cn } from '$lib/utils';
 
   type ContactProps = {
     basicInfo: BasicInfo;
     contactInfo: ContactInfo;
-    class?: SvelteHTMLElements['header']['class'];
+    class?: ClassValue;
   };
 
   const { basicInfo, contactInfo, class: className }: ContactProps = $props();
 
-  const { profession, residence } = basicInfo;
+  const { profession, residence } = $derived(basicInfo);
 </script>
 
 <section class={cn('space-y-2', className)}>
-  <Image src={avatarImage} alt="Đorđe Matić avatar" class="size-24 rounded-full" />
+  <Image src={avatarImage} alt="{basicInfo.name} avatar" class="size-24 rounded-full" />
 
   <Typography tag="h1" variant="heading" fontWeight="bold">
-    Đorđe Matić
+    {basicInfo.name}
     <span class="sr-only">resume</span>
   </Typography>
   <div>

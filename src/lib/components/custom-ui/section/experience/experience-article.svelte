@@ -1,24 +1,24 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
-  import { cn } from '$lib/utils/tailwind';
-  import { toPdf } from '$lib/state/to-pdf.svelte';
+  import type { ClassValue } from 'svelte/elements';
 
-  import Typography from '$lib/components/custom-ui/typography';
+  import Image from '$lib/components/custom-ui/image';
   import { DateRangeDisplay } from '$lib/components/custom-ui/section/experience';
   import Tags from '$lib/components/custom-ui/tags';
-  import Image from '$lib/components/custom-ui/image';
-
+  import Typography from '$lib/components/custom-ui/typography';
+  import { toPdf } from '$lib/state/to-pdf.svelte';
   import type { ExperienceDataSingle, Language } from '$lib/types';
+  import { cn } from '$lib/utils';
 
   type ExperienceArticleProps = {
     articleData: ExperienceDataSingle;
     lang: Language;
-    class?: SvelteHTMLElements['article']['class'];
+    class?: ClassValue;
   };
 
   const { articleData, lang, class: className }: ExperienceArticleProps = $props();
 
-  const { title, company, logo, startDate, endDate, description, technologies } = articleData;
+  const { title, company, logo, startDate, endDate, description, technologies } =
+    $derived(articleData);
 </script>
 
 <article class={cn('space-y-2', className)}>

@@ -1,16 +1,15 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
-  import { cn } from '$lib/utils/tailwind';
-  import { toPdf } from '$lib/state/to-pdf.svelte';
+  import type { ClassValue } from 'svelte/elements';
 
-  import Typography from '$lib/components/custom-ui/typography';
   import { Actions } from '$lib/components/custom-ui/section/projects';
-
+  import Typography from '$lib/components/custom-ui/typography';
+  import { toPdf } from '$lib/state/to-pdf.svelte';
   import type { ProjectDataSingle } from '$lib/types';
+  import { cn } from '$lib/utils';
 
   type ProjectCardProps = {
     data: ProjectDataSingle;
-    class?: SvelteHTMLElements['div']['class'];
+    class?: ClassValue;
   };
   let { data, class: className }: ProjectCardProps = $props();
 
@@ -19,7 +18,7 @@
     description: { heading, text },
     link,
     github
-  } = data;
+  } = $derived(data);
 </script>
 
 <div class={cn('space-y-2', className)}>

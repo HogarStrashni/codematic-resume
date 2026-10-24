@@ -12,6 +12,14 @@
     "binding": "ASSETS",
     "directory": ".svelte-kit/cloudflare"
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "email-counter",
+      "database_id": "70f0789c-cb08-4a2f-8a51-2d198d51f367"
+    }
+  ],
+  "send_email": [{ "name": "EMAIL" }],
   "observability": {
     "enabled": true
   }

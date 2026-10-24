@@ -1,23 +1,22 @@
 <script lang="ts">
   import { tick } from 'svelte';
-  import type { SvelteHTMLElements } from 'svelte/elements';
+  import type { ClassValue } from 'svelte/elements';
+
   import { dev } from '$app/environment';
-  import { cn } from '$lib/utils/tailwind';
-  import { toPdf } from '$lib/state/to-pdf.svelte';
-
   import Typography from '$lib/components/custom-ui/typography';
-  import { Printer, Download, FileText } from '$lib/icons';
-
+  import { Download, FileText, Printer } from '$lib/icons';
+  import { toPdf } from '$lib/state/to-pdf.svelte';
   import type { DownloadFileMetadata } from '$lib/types';
+  import { cn } from '$lib/utils';
 
   type HeaderProps = {
     downloadFileMetadata: DownloadFileMetadata;
-    class?: SvelteHTMLElements['div']['class'];
+    class?: ClassValue;
   };
 
   const { downloadFileMetadata, class: className }: HeaderProps = $props();
 
-  const { href, download } = downloadFileMetadata;
+  const { href, download } = $derived(downloadFileMetadata);
 
   const printToPdfFile = async () => {
     if (!dev) {
@@ -60,6 +59,7 @@
   <a
     {href}
     {download}
+    rel="external"
     class="flex items-center gap-1 rounded border bg-white px-4 py-2 shadow-sm duration-200 active:shadow-none lg:flex-col lg:gap-0 lg:hover:bg-gray-50"
   >
     <Download class="size-4" />

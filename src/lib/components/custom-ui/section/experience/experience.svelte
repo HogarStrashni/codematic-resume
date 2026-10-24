@@ -1,15 +1,14 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
-  import { cn } from '$lib/utils/tailwind';
+  import type { ClassValue } from 'svelte/elements';
 
   import { ExperienceArticle } from '$lib/components/custom-ui/section/experience';
-
   import type { ExperienceData, Language } from '$lib/types';
+  import { cn } from '$lib/utils';
 
   type ExperienceProps = {
     experienceData: ExperienceData;
     lang: Language;
-    class?: SvelteHTMLElements['div']['class'];
+    class?: ClassValue;
   };
 
   const { experienceData, lang, class: className }: ExperienceProps = $props();

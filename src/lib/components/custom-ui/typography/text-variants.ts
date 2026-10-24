@@ -1,8 +1,9 @@
-import { type VariantProps, cva } from 'class-variance-authority';
+import { cva, type VariantProps } from 'class-variance-authority';
 
 export const textVariants = cva('', {
   variants: {
     variant: {
+      headingLarge: 'text-4xl sm:text-5xl',
       heading: 'text-2xl sm:text-3xl',
       headingSmall: 'text-xl sm:text-2xl',
       text: 'text-sm sm:text-base',

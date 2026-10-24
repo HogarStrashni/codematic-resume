@@ -1,14 +1,14 @@
-import type { SvelteHTMLElements } from 'svelte/elements';
+import type { ClassValue } from 'svelte/elements';
 
-import MailOpen from './mail-open.svelte';
-import Phone from './phone.svelte';
-import Linkedin from './linkedin.svelte';
+import Download from './download.svelte';
+import FileText from './file-text.svelte';
 import Github from './github.svelte';
 import Link from './link.svelte';
-import Download from './download.svelte';
+import Linkedin from './linkedin.svelte';
+import MailOpen from './mail-open.svelte';
+import Phone from './phone.svelte';
 import Printer from './printer.svelte';
-import FileText from './file-text.svelte';
 
-type IconProps = { class?: SvelteHTMLElements['svg']['class'] };
+type IconProps = { class?: ClassValue };
 
-export { MailOpen, Phone, Linkedin, Github, Link, Download, Printer, FileText, type IconProps };
+export { Download, FileText, Github, type IconProps, Link, Linkedin, MailOpen, Phone, Printer };

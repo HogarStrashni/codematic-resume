@@ -1,17 +1,17 @@
 <script lang="ts">
-  import type { SvelteHTMLElements } from 'svelte/elements';
-  import { cn } from '$lib/utils/tailwind';
+  import type { ClassValue } from 'svelte/elements';
 
   import Typography, { type TextVariantProps } from '$lib/components/custom-ui/typography';
+  import { cn } from '$lib/utils';
 
   type TagsProps = {
     data: Array<string>;
     variant?: TextVariantProps['variant'];
-    class?: SvelteHTMLElements['span']['class'];
+    class?: ClassValue;
   };
   let { data = [], variant = 'textSmall', class: className }: TagsProps = $props();
 
-  const skillsString = data.join(' • ');
+  const skillsString = $derived(data.join(' • '));
 </script>
 
 <Typography tag="span" {variant} class={cn('block italic', className)}>
