@@ -31,12 +31,12 @@
   };
 </script>
 
-<section class="fixed top-4 right-4 z-1 ml-4 flex w-full max-w-96 flex-col gap-4 sm:top-20">
+<section class="fixed top-4 right-0 z-1 flex w-full max-w-96 flex-col gap-4 sm:top-20">
   {#each toast.toasts as item (item.id)}
     <div
       transition:fly={{ x: 100 }}
       class={cn(
-        'flex gap-3 rounded-lg border border-gray-700 bg-black p-4',
+        'mx-4 flex gap-3 rounded-lg border border-gray-700 bg-black p-4',
         CONFIG[item.type].text
       )}
     >
