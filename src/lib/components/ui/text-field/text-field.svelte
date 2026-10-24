@@ -11,7 +11,7 @@
   };
 
   type TextFieldProps =
-    | ({ as: 'input' } & HTMLInputAttributes & CommonProps)
+    | ({ as?: 'input' } & HTMLInputAttributes & CommonProps)
     | ({ as: 'textarea' } & HTMLTextareaAttributes & CommonProps);
 
   let { as = 'input', label, error, class: className, ...props }: TextFieldProps = $props();

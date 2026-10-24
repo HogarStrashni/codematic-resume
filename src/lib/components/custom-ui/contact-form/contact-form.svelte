@@ -101,26 +101,14 @@
   oninput={handleInput}
   class={cn('mx-auto flex flex-col gap-4 sm:max-w-128', className)}
 >
-  <TextField
-    as="input"
-    label="First name"
-    name="firstName"
-    autocomplete="off"
-    error={fieldErrors.firstName}
-  />
-  <TextField
-    as="input"
-    label="Last name"
-    name="lastName"
-    autocomplete="off"
-    error={fieldErrors.lastName}
-  />
-  <TextField as="input" label="Email" name="email" autocomplete="off" error={fieldErrors.email} />
+  <TextField label="First name" name="firstName" autocomplete="off" error={fieldErrors.firstName} />
+  <TextField label="Last name" name="lastName" autocomplete="off" error={fieldErrors.lastName} />
+  <TextField label="Email" name="email" autocomplete="off" error={fieldErrors.email} />
   <div class="sr-only">
     <TextField
-      as="input"
       label="Confirm email"
       name="confirmEmail"
+      autocomplete="off"
       aria-hidden="true"
       tabindex={-1}
     />
